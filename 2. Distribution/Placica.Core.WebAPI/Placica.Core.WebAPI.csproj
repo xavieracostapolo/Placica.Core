@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\3. Application\Placica.Core.Contracts.ServiceLibrary\Placica.Core.Contracts.ServiceLibrary.csproj" />
+    <ProjectReference Include="..\..\3. Application\Placica.Core.Impl.ServiceLibrary\Placica.Core.Impl.ServiceLibrary.csproj" />
+    <ProjectReference Include="..\..\5. Infraestructure\Placica.Core.Infraestructure.Data\Placica.Core.Infraestructure.Data.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>

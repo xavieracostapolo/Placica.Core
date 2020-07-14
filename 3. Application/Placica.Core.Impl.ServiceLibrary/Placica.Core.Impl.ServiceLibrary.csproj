@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\4. Domain\Placica.Core.Library\Placica.Core.Library.csproj" />
+    <ProjectReference Include="..\Placica.Core.Contracts.ServiceLibrary\Placica.Core.Contracts.ServiceLibrary.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>
