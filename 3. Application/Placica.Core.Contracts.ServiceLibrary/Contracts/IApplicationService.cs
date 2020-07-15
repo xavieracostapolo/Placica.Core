@@ -7,9 +7,9 @@ namespace Placica.Core.Contracts.ServiceLibrary.Contracts
         where T : class
     {
         Task<IEnumerable<T>> GetAll();
-        Task<T> Get(int id);
+        Task<T> Get(long id);
         Task<T> Add(T dto);
         Task<T> Update(T dto);
-        Task<T> Delete(int id);
+        Task<T> Delete(long id);
     }
 }

@@ -1,0 +1,288 @@
+2020-07-15 17:17:48.622 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-15 17:17:48.700 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-15 17:17:48.701 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-15 17:17:48.701 +02:00 [INF] Hosting environment: Development
+2020-07-15 17:17:48.701 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-15 17:18:33.246 +02:00 [INF] Application is shutting down...
+2020-07-15 17:33:24.876 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-15 17:33:24.954 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-15 17:33:24.954 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-15 17:33:24.954 +02:00 [INF] Hosting environment: Development
+2020-07-15 17:33:24.954 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-15 17:33:30.101 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-07-15 17:33:30.172 +02:00 [INF] Request finished in 75.9906ms 200 text/html;charset=utf-8
+2020-07-15 17:33:30.455 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-07-15 17:33:30.513 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-07-15 17:33:30.542 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-07-15 17:33:30.553 +02:00 [INF] Request finished in 40.381ms 200 image/png
+2020-07-15 17:33:30.691 +02:00 [INF] Request finished in 236.1956ms 200 application/json;charset=utf-8
+2020-07-15 17:33:46.933 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 17:33:46.990 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 17:33:47.050 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 17:33:47.897 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 17:33:48.031 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 17:33:48.049 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 17:33:48.061 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 1002.8933ms
+2020-07-15 17:33:48.062 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 17:33:48.065 +02:00 [INF] Request finished in 1132.5891ms 200 application/json; charset=utf-8
+2020-07-15 17:33:50.966 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 17:33:50.971 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 17:33:50.974 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 17:33:51.010 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 17:33:51.012 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 17:33:51.015 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 17:33:51.017 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 42.6827ms
+2020-07-15 17:33:51.020 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 17:33:51.021 +02:00 [INF] Request finished in 56.2621ms 200 application/json; charset=utf-8
+2020-07-15 17:33:54.692 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 17:33:54.696 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 17:33:54.697 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 17:33:54.719 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 17:33:54.722 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 17:33:54.724 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 17:33:54.727 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 27.5432ms
+2020-07-15 17:33:54.729 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 17:33:54.733 +02:00 [INF] Request finished in 41.2218ms 200 application/json; charset=utf-8
+2020-07-15 17:33:59.099 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1  
+2020-07-15 17:33:59.101 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI)'
+2020-07-15 17:33:59.112 +02:00 [INF] Route matched with {action = "Get", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 17:33:59.122 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 17:33:59.300 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Placica.Core.WebAPI.Models.Producto, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-15 17:33:59.304 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI) in 190.9565ms
+2020-07-15 17:33:59.305 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI)'
+2020-07-15 17:33:59.307 +02:00 [INF] Request finished in 208.5717ms 200 application/json; charset=utf-8
+2020-07-15 17:34:10.818 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1/2  
+2020-07-15 17:34:10.821 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 17:34:10.831 +02:00 [INF] Route matched with {action = "GetById", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 17:34:10.843 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 17:34:10.940 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 17:34:10.942 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI) in 110.6314ms
+2020-07-15 17:34:10.943 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 17:34:10.943 +02:00 [INF] Request finished in 125.175ms 200 application/json; charset=utf-8
+2020-07-15 17:34:16.844 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1/3  
+2020-07-15 17:34:16.846 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 17:34:16.847 +02:00 [INF] Route matched with {action = "GetById", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 17:34:16.851 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 17:34:16.860 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 17:34:16.862 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI) in 14.5921ms
+2020-07-15 17:34:16.863 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 17:34:16.864 +02:00 [INF] Request finished in 20.5412ms 200 application/json; charset=utf-8
+2020-07-15 18:00:30.080 +02:00 [INF] Application is shutting down...
+2020-07-15 18:00:42.809 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-15 18:00:42.912 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-15 18:00:42.912 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-15 18:00:42.913 +02:00 [INF] Hosting environment: Development
+2020-07-15 18:00:42.913 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-15 18:00:45.272 +02:00 [INF] Application is shutting down...
+2020-07-15 18:01:10.169 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-15 18:01:10.256 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-15 18:01:10.256 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-15 18:01:10.257 +02:00 [INF] Hosting environment: Development
+2020-07-15 18:01:10.257 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-15 18:02:17.953 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-07-15 18:02:18.041 +02:00 [INF] Request finished in 93.4538ms 200 text/html;charset=utf-8
+2020-07-15 18:02:18.393 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-07-15 18:02:18.433 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-07-15 18:02:18.466 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-07-15 18:02:18.467 +02:00 [INF] Request finished in 33.5182ms 200 image/png
+2020-07-15 18:02:18.640 +02:00 [INF] Request finished in 247.1309ms 200 application/json;charset=utf-8
+2020-07-15 18:02:31.303 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 18:02:31.355 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:31.431 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:02:32.332 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:02:32.457 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:02:32.477 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 18:02:32.490 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 1050.8517ms
+2020-07-15 18:02:32.490 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:32.494 +02:00 [INF] Request finished in 1191.2726ms 200 application/json; charset=utf-8
+2020-07-15 18:02:35.978 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 18:02:35.988 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:35.990 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:02:36.022 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:02:36.024 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:02:36.026 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 18:02:36.028 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 36.939ms
+2020-07-15 18:02:36.028 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:36.029 +02:00 [INF] Request finished in 52.9165ms 200 application/json; charset=utf-8
+2020-07-15 18:02:39.656 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 18:02:39.659 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:39.663 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:02:39.692 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:02:39.696 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:02:39.698 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 18:02:39.699 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 34.5846ms
+2020-07-15 18:02:39.701 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:39.702 +02:00 [INF] Request finished in 46.7898ms 200 application/json; charset=utf-8
+2020-07-15 18:02:43.120 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Producto/v1 application/json 8
+2020-07-15 18:02:43.123 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:43.125 +02:00 [INF] Route matched with {action = "Create", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Producto) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:02:43.129 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:02:43.132 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:02:43.135 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 18:02:43.137 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI) in 11.3264ms
+2020-07-15 18:02:43.138 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:02:43.139 +02:00 [INF] Request finished in 19.1198ms 200 application/json; charset=utf-8
+2020-07-15 18:02:50.315 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1  
+2020-07-15 18:02:50.317 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI)'
+2020-07-15 18:02:50.327 +02:00 [INF] Route matched with {action = "Get", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:02:50.338 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:02:50.515 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Placica.Core.WebAPI.Models.Producto, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-15 18:02:50.517 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI) in 189.2804ms
+2020-07-15 18:02:50.518 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI)'
+2020-07-15 18:02:50.519 +02:00 [INF] Request finished in 204.0799ms 200 application/json; charset=utf-8
+2020-07-15 18:03:01.056 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1/3  
+2020-07-15 18:03:01.058 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 18:03:01.069 +02:00 [INF] Route matched with {action = "GetById", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:03:01.083 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:03:01.177 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Producto'.
+2020-07-15 18:03:01.179 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI) in 109.0605ms
+2020-07-15 18:03:01.179 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 18:03:01.180 +02:00 [INF] Request finished in 124.1366ms 200 application/json; charset=utf-8
+2020-07-15 18:03:12.760 +02:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:5001/api/Producto/v1/3  
+2020-07-15 18:03:12.762 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.DeleteOwner (Placica.Core.WebAPI)'
+2020-07-15 18:03:12.767 +02:00 [INF] Route matched with {action = "DeleteOwner", controller = "Producto"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteOwner(Int64) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:03:12.782 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:03:12.815 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:03:12.820 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[Placica.Core.WebAPI.Models.Producto, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-15 18:03:12.834 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.DeleteOwner (Placica.Core.WebAPI) in 65.8582ms
+2020-07-15 18:03:12.835 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.DeleteOwner (Placica.Core.WebAPI)'
+2020-07-15 18:03:12.835 +02:00 [INF] Request finished in 75.1574ms 200 application/json; charset=utf-8
+2020-07-15 18:03:32.580 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1  
+2020-07-15 18:03:32.581 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI)'
+2020-07-15 18:03:32.582 +02:00 [INF] Route matched with {action = "Get", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:03:32.589 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:03:32.593 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Placica.Core.WebAPI.Models.Producto, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-15 18:03:32.595 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI) in 11.0148ms
+2020-07-15 18:03:32.596 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.Get (Placica.Core.WebAPI)'
+2020-07-15 18:03:32.597 +02:00 [INF] Request finished in 17.7509ms 200 application/json; charset=utf-8
+2020-07-15 18:03:35.487 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Producto/v1/3  
+2020-07-15 18:03:35.488 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 18:03:35.489 +02:00 [INF] Route matched with {action = "GetById", controller = "Producto"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller Placica.Core.WebAPI.Controllers.V1.ProductoController (Placica.Core.WebAPI).
+2020-07-15 18:03:35.492 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:03:35.506 +02:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-07-15 18:03:35.506 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI) in 16.7534ms
+2020-07-15 18:03:35.507 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)'
+2020-07-15 18:03:35.508 +02:00 [INF] Request finished in 21.1693ms 204 
+2020-07-15 18:03:53.998 +02:00 [INF] Application is shutting down...
+2020-07-15 18:45:20.379 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: The following errors occurred with attribute routing information:
+
+Error 1:
+Attribute routes with the same name 'ById' must have the same template:
+Action: 'Placica.Core.WebAPI.Controllers.V1.CalificacionController.GetById (Placica.Core.WebAPI)' - Template: 'api/Calificacion/v1/{id}'
+Action: 'Placica.Core.WebAPI.Controllers.V1.CategoriaController.GetById (Placica.Core.WebAPI)' - Template: 'api/Categoria/v1/{id}'
+Action: 'Placica.Core.WebAPI.Controllers.V1.ClienteController.GetById (Placica.Core.WebAPI)' - Template: 'api/Cliente/v1/{id}'
+Action: 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.GetById (Placica.Core.WebAPI)' - Template: 'api/Empresa/v1/{id}'
+Action: 'Placica.Core.WebAPI.Controllers.V1.PedidoController.GetById (Placica.Core.WebAPI)' - Template: 'api/Pedido/v1/{id}'
+Action: 'Placica.Core.WebAPI.Controllers.V1.PedidoDetalleController.GetById (Placica.Core.WebAPI)' - Template: 'api/PedidoDetalle/v1/{id}'
+Action: 'Placica.Core.WebAPI.Controllers.V1.ProductoController.GetById (Placica.Core.WebAPI)' - Template: 'api/Producto/v1/{id}'
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModelFactory.Flatten[TResult](ApplicationModel application, Func`5 flattener)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorBuilder.Build(ApplicationModel application)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.<>c__DisplayClass11_0.<Subscribe>b__0()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource..ctor(IActionDescriptorCollectionProvider actions, ActionEndpointFactory endpointFactory)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at Placica.Core.WebAPI.Startup.<>c.<Configure>b__5_1(IEndpointRouteBuilder endpoints) in /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI/Startup.cs:line 78
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Placica.Core.WebAPI.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI/Startup.cs:line 76
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__2(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2020-07-15 18:47:20.473 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-15 18:47:20.562 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-15 18:47:20.563 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-15 18:47:20.563 +02:00 [INF] Hosting environment: Development
+2020-07-15 18:47:20.563 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-15 18:47:26.716 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-07-15 18:47:26.826 +02:00 [INF] Request finished in 115.594ms 200 text/html;charset=utf-8
+2020-07-15 18:47:27.168 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-07-15 18:47:27.213 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-07-15 18:47:27.242 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-07-15 18:47:27.243 +02:00 [INF] Request finished in 29.7759ms 200 image/png
+2020-07-15 18:47:27.385 +02:00 [INF] Request finished in 217.223ms 200 application/json;charset=utf-8
+2020-07-15 18:47:48.992 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Empresa/v1 application/json 8
+2020-07-15 18:47:49.042 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:47:49.119 +02:00 [INF] Route matched with {action = "Create", controller = "Empresa"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Empresa) on controller Placica.Core.WebAPI.Controllers.V1.EmpresaController (Placica.Core.WebAPI).
+2020-07-15 18:47:49.132 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI) in 4.431ms
+2020-07-15 18:47:49.137 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:47:49.144 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Placica.Core.WebAPI.Services.Contracts.IService`1[Placica.Core.WebAPI.Models.Empresa]' while attempting to activate 'Placica.Core.WebAPI.Controllers.V1.EmpresaController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-15 18:47:49.191 +02:00 [INF] Request finished in 198.752ms 500 text/plain
+2020-07-15 18:53:22.459 +02:00 [INF] Application is shutting down...
+2020-07-15 18:53:37.632 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-15 18:53:37.708 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-15 18:53:37.709 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-15 18:53:37.710 +02:00 [INF] Hosting environment: Development
+2020-07-15 18:53:37.710 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-15 18:53:41.950 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-07-15 18:53:42.021 +02:00 [INF] Request finished in 76.1756ms 200 text/html;charset=utf-8
+2020-07-15 18:53:42.331 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-07-15 18:53:42.353 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-07-15 18:53:42.388 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-07-15 18:53:42.389 +02:00 [INF] Request finished in 35.708ms 200 image/png
+2020-07-15 18:53:42.508 +02:00 [INF] Request finished in 176.7119ms 200 application/json;charset=utf-8
+2020-07-15 18:53:56.004 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Empresa/v1 application/json 8
+2020-07-15 18:53:56.056 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:53:56.130 +02:00 [INF] Route matched with {action = "Create", controller = "Empresa"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Empresa) on controller Placica.Core.WebAPI.Controllers.V1.EmpresaController (Placica.Core.WebAPI).
+2020-07-15 18:53:56.956 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:53:57.094 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:53:57.123 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Empresa'.
+2020-07-15 18:53:57.139 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI) in 1002.2054ms
+2020-07-15 18:53:57.139 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:53:57.143 +02:00 [INF] Request finished in 1138.9074ms 200 application/json; charset=utf-8
+2020-07-15 18:54:02.442 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Empresa/v1 application/json 8
+2020-07-15 18:54:02.454 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:54:02.457 +02:00 [INF] Route matched with {action = "Create", controller = "Empresa"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Empresa) on controller Placica.Core.WebAPI.Controllers.V1.EmpresaController (Placica.Core.WebAPI).
+2020-07-15 18:54:02.493 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:54:02.494 +02:00 [INF] Saved 1 entities to in-memory store.
+2020-07-15 18:54:02.497 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Empresa'.
+2020-07-15 18:54:02.498 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI) in 39.9374ms
+2020-07-15 18:54:02.499 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Create (Placica.Core.WebAPI)'
+2020-07-15 18:54:02.500 +02:00 [INF] Request finished in 59.5351ms 200 application/json; charset=utf-8
+2020-07-15 18:54:09.074 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Empresa/v1  
+2020-07-15 18:54:09.079 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Get (Placica.Core.WebAPI)'
+2020-07-15 18:54:09.090 +02:00 [INF] Route matched with {action = "Get", controller = "Empresa"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Placica.Core.WebAPI.Controllers.V1.EmpresaController (Placica.Core.WebAPI).
+2020-07-15 18:54:09.111 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=PlacicaDataBaseMemory 
+2020-07-15 18:54:09.290 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Placica.Core.WebAPI.Models.Empresa, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-15 18:54:09.292 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.EmpresaController.Get (Placica.Core.WebAPI) in 201.6657ms
+2020-07-15 18:54:09.294 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.EmpresaController.Get (Placica.Core.WebAPI)'
+2020-07-15 18:54:09.295 +02:00 [INF] Request finished in 221.6094ms 200 application/json; charset=utf-8

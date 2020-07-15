@@ -24,7 +24,7 @@ namespace Placica.Core.Infraestructure.Data.Repository
             return entity;
         }
 
-        public async Task<TEntity> Delete(int id)
+        public async Task<TEntity> Delete(long id)
         {
             var entity = await context.Set<TEntity>().FindAsync(id);
             if (entity == null)
@@ -38,7 +38,7 @@ namespace Placica.Core.Infraestructure.Data.Repository
             return entity;
         }
 
-        public async Task<TEntity> Get(int id)
+        public async Task<TEntity> Get(long id)
         {
             return await context.Set<TEntity>()
             .AsNoTracking()

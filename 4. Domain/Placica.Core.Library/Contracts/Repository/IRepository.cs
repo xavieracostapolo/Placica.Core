@@ -8,10 +8,10 @@ namespace Placica.Core.Library.Contracts.Repository
     public interface IRepository<T> where T : class, IEntity
     {
         Task<IEnumerable<T>> GetAll();
-        Task<T> Get(int id);
+        Task<T> Get(long id);
         Task<T> Add(T entity);
         Task<T> Update(T entity);
-        Task<T> Delete(int id);
+        Task<T> Delete(long id);
         IQueryable<T> GetAllQueryable();
     }
 }

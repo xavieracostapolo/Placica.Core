@@ -7,11 +7,11 @@ namespace Placica.Core.WebAPI.Controllers.V1
 {
     [Route("api/[controller]/v1")]
     [ApiController]
-    public class ProductoController : BaseController<Producto>
+    public class CategoriaController : BaseController<Categoria>
     {
-       public ProductoController(
-           IService<Producto> service,
-           ILogger<ProductoController> logger)
+       public CategoriaController(
+           IService<Categoria> service,
+           ILogger<CategoriaController> logger)
             : base(service, logger)
        {
        } 

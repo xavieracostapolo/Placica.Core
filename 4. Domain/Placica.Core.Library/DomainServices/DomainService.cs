@@ -21,12 +21,12 @@ namespace Placica.Core.Library.DomainServices
             return await _repository.Add(entity);
         }
 
-        public async Task<TEntity> Delete(int id)
+        public async Task<TEntity> Delete(long id)
         {
             return await _repository.Delete(id);
         }
 
-        public async Task<TEntity> Get(int id)
+        public async Task<TEntity> Get(long id)
         {
             return await _repository.Get(id);
         }

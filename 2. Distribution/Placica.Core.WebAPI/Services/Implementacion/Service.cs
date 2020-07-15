@@ -28,13 +28,13 @@ namespace Placica.Core.WebAPI.Services.Implementacion
             return _mapper.Map<TModel>(response);
         }
 
-        public async Task<TModel> Delete(int id)
+        public async Task<TModel> Delete(long id)
         {
             var response = await _applicationService.Delete(id);
             return _mapper.Map<TModel>(response);
         }
 
-        public async Task<TModel> Get(int id)
+        public async Task<TModel> Get(long id)
         {
             var response = await _applicationService.Get(id);
             return _mapper.Map<TModel>(response);

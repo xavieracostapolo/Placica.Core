@@ -28,13 +28,13 @@ namespace Placica.Core.Impl.ServiceLibrary.ApplicationServices
             return _mapper.Map<TDto>(response);
         }
 
-        public async Task<TDto> Delete(int id)
+        public async Task<TDto> Delete(long id)
         {
             var response = await _domainService.Delete(id);
             return _mapper.Map<TDto>(response);
         }
 
-        public async Task<TDto> Get(int id)
+        public async Task<TDto> Get(long id)
         {
             var response = await _domainService.Get(id);
             return _mapper.Map<TDto>(response);
