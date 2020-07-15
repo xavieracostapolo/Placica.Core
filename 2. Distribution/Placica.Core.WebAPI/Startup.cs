@@ -1,3 +1,4 @@
+using System;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Placica.Core.Infraestructure.Data.Context;
 using Placica.Core.WebAPI.Helpers;
+using Serilog;
 
 namespace Placica.Core.WebAPI
 {
@@ -27,6 +29,9 @@ namespace Placica.Core.WebAPI
             );
 
             IoC.AddDependency(services);
+            
+            // Start Registering and Initializing AutoMapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());  
 
             services.AddSwaggerGen(c =>
             {
@@ -38,14 +43,7 @@ namespace Placica.Core.WebAPI
                 });
             });
 
-            // Auto Mapper Configurations
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingProfile());
-            });
-
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);
+            services.ConfigureCors();
 
             services.AddControllers();
         }
@@ -60,8 +58,10 @@ namespace Placica.Core.WebAPI
 
             app.UseHttpsRedirection();
 
-// Enable middleware to serve generated Swagger as a JSON endpoint.
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
+
+            //app.UseSerilogRequestLogging();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.

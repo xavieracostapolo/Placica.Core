@@ -32,3 +32,7 @@ TODO: Guide users through getting your code up and running on their own system. 
  
 * dotnet build
 * dotnet run -p 2.\ Distribution/Placica.Core.WebAPI/
+
+
+# Serilog
+https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
