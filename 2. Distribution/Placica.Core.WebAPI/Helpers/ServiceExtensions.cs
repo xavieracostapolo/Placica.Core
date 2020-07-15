@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Placica.Core.WebAPI.Middleware;
 
 namespace Placica.Core.WebAPI.Helpers
 {
@@ -13,6 +15,11 @@ namespace Placica.Core.WebAPI.Helpers
                 .AllowAnyMethod()
                 .AllowAnyHeader());
             });
+        }
+
+        public static void ConfigureCustomExceptionMiddleware(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
         }
     }
 }

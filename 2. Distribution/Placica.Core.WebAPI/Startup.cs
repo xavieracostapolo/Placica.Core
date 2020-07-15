@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Placica.Core.Impl.ServiceLibrary.Helpers;
 using Placica.Core.Infraestructure.Data.Context;
+using Placica.Core.Infraestructure.Data.Helpers;
+using Placica.Core.Library.Helpers;
 using Placica.Core.WebAPI.Helpers;
-using Serilog;
 
 namespace Placica.Core.WebAPI
 {
@@ -28,7 +30,10 @@ namespace Placica.Core.WebAPI
                 opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
             );
 
-            IoC.AddDependency(services);
+            services.AddDependencyDistribution();
+            services.AddDependencyApplication();
+            services.AddDependencyDomain();
+            services.AddDependencyInfraestructure();
             
             // Start Registering and Initializing AutoMapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());  
@@ -61,7 +66,7 @@ namespace Placica.Core.WebAPI
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
-            //app.UseSerilogRequestLogging();
+            app.ConfigureCustomExceptionMiddleware();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.

@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Placica.Core.WebAPI.Services.Contracts;
+using Serilog;
 
 namespace Placica.Core.WebAPI.Controllers.V1
 {
@@ -26,7 +26,9 @@ namespace Placica.Core.WebAPI.Controllers.V1
         public async Task<IActionResult> Get()
         {
             var data = await _service.GetAll();
-            return Ok(data);
+            throw new Exception("Exception while fetching all the students from the storage.");
+
+            // return Ok(data);
         }
 
         [HttpGet("{id}")]
