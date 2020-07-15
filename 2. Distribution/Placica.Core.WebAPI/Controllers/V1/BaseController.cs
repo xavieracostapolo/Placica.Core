@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Placica.Core.WebAPI.Helpers;
 using Placica.Core.WebAPI.Services.Contracts;
-using Serilog;
 
 namespace Placica.Core.WebAPI.Controllers.V1
 {

@@ -14,10 +14,6 @@ namespace Placica.Core.WebAPI
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                })
                 //Borramos todos los registros de los loggers que vienen prerregistrados
                 .ConfigureLogging(logging =>
                 {
@@ -28,6 +24,10 @@ namespace Placica.Core.WebAPI
                 .UseSerilog((HostBuilderContext context, LoggerConfiguration loggerConfiguration) =>
                 {
                     loggerConfiguration.ReadFrom.Configuration(context.Configuration);
+                })
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

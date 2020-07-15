@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Placica.Core.WebAPI.Models;
 using Placica.Core.WebAPI.Services.Contracts;
-using Serilog;
 
 namespace Placica.Core.WebAPI.Controllers.V1
 {
@@ -11,7 +11,7 @@ namespace Placica.Core.WebAPI.Controllers.V1
     {
        public ClienteController(
            IService<Cliente> service,
-           ILogger logger)
+           ILogger<ClienteController> logger)
             : base(service, logger)
        {
        } 
