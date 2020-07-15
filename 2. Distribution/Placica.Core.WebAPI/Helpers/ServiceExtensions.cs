@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Placica.Core.WebAPI.Middleware;
 
 namespace Placica.Core.WebAPI.Helpers
 {

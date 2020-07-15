@@ -47,9 +47,8 @@ namespace Placica.Core.WebAPI
                     Version = "V1"
                 });
             });
-
+            
             services.ConfigureCors();
-
             services.AddControllers();
         }
 

@@ -16,6 +16,8 @@ namespace Placica.Core.WebAPI.Helpers
             services.AddTransient<IService<Model.PedidoDetalle>, PedidoDetalleService>();
             services.AddTransient<IService<Model.Pedido>, PedidoService>();
             services.AddTransient<IService<Model.Producto>, ProductoService>();
+
+            services.AddScoped<ModelValidationAttribute>();
         }
     }
 }

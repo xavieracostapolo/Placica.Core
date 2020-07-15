@@ -1,11 +1,12 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Placica.Core.WebAPI.Helpers;
 using Placica.Core.WebAPI.Services.Contracts;
 using Serilog;
 
 namespace Placica.Core.WebAPI.Controllers.V1
 {
+    [ModelValidation]
     [Route("api/[controller]")]
     [ApiController]
     public abstract class BaseController<TModel> : Controller
@@ -26,9 +27,7 @@ namespace Placica.Core.WebAPI.Controllers.V1
         public async Task<IActionResult> Get()
         {
             var data = await _service.GetAll();
-            throw new Exception("Exception while fetching all the students from the storage.");
-
-            // return Ok(data);
+            return Ok(data);
         }
 
         [HttpGet("{id}")]

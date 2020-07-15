@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Placica.Core.WebAPI.Models;
 using Serilog;
 
-namespace Placica.Core.WebAPI.Middleware
+namespace Placica.Core.WebAPI.Helpers
 {
     public class ExceptionMiddleware
     {
