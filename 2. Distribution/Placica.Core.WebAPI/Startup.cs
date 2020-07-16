@@ -28,7 +28,8 @@ namespace Placica.Core.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PlacicaContext>(opt =>
-                opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
+                // opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
+                opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Placica.Core.WebAPI"))
             );
 
             services.AddSwaggerGen(c =>

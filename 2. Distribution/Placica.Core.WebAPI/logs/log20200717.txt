@@ -1,0 +1,214 @@
+2020-07-17 00:12:32.000 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2020-07-17 00:15:17.698 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:18:37.735 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:18:38.413 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2020-07-17 00:18:38.594 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2020-07-17 00:18:38.613 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2020-07-17 00:18:38.625 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2020-07-17 00:18:38.684 +02:00 [INF] Applying migration '20200716221517_Initial'.
+2020-07-17 00:18:38.726 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Calificaciones" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Calificaciones" PRIMARY KEY AUTOINCREMENT
+);
+2020-07-17 00:18:38.726 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Categorias" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categorias" PRIMARY KEY AUTOINCREMENT
+);
+2020-07-17 00:18:38.727 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Clientes" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Clientes" PRIMARY KEY AUTOINCREMENT,
+    "Nombre" TEXT NOT NULL,
+    "Apellido" TEXT NOT NULL
+);
+2020-07-17 00:18:38.728 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Empresas" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Empresas" PRIMARY KEY AUTOINCREMENT
+);
+2020-07-17 00:18:38.728 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PedidoDetalles" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_PedidoDetalles" PRIMARY KEY AUTOINCREMENT
+);
+2020-07-17 00:18:38.729 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Pedidos" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Pedidos" PRIMARY KEY AUTOINCREMENT
+);
+2020-07-17 00:18:38.730 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Productos" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Productos" PRIMARY KEY AUTOINCREMENT
+);
+2020-07-17 00:18:38.731 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20200716221517_Initial', '3.1.6');
+2020-07-17 00:25:31.116 +02:00 [INF] User profile is available. Using '/Users/xavieracosta/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2020-07-17 00:25:31.548 +02:00 [INF] Now listening on: https://localhost:5001
+2020-07-17 00:25:31.549 +02:00 [INF] Now listening on: http://localhost:5000
+2020-07-17 00:25:31.549 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-17 00:25:31.552 +02:00 [INF] Hosting environment: Development
+2020-07-17 00:25:31.552 +02:00 [INF] Content root path: /Users/xavieracosta/Documents/NetCore/Placica/Placica.Core/2. Distribution/Placica.Core.WebAPI
+2020-07-17 00:25:50.215 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-07-17 00:25:50.331 +02:00 [INF] Request finished in 120.5111ms 200 text/html;charset=utf-8
+2020-07-17 00:25:50.689 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-07-17 00:25:50.755 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-07-17 00:25:50.787 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-07-17 00:25:50.788 +02:00 [INF] Request finished in 33.1182ms 200 image/png
+2020-07-17 00:25:50.916 +02:00 [INF] Request finished in 228.0335ms 200 application/json;charset=utf-8
+2020-07-17 00:26:08.239 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Token/v1  
+2020-07-17 00:26:08.362 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.TokenController.GetRandomToken (Placica.Core.WebAPI)'
+2020-07-17 00:26:08.428 +02:00 [INF] Route matched with {action = "GetRandomToken", controller = "Token"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetRandomToken() on controller Placica.Core.WebAPI.Controllers.V1.TokenController (Placica.Core.WebAPI).
+2020-07-17 00:26:08.629 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-07-17 00:26:08.654 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.TokenController.GetRandomToken (Placica.Core.WebAPI) in 210.3994ms
+2020-07-17 00:26:08.660 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.TokenController.GetRandomToken (Placica.Core.WebAPI)'
+2020-07-17 00:26:08.660 +02:00 [INF] Request finished in 421.798ms 200 application/json; charset=utf-8
+2020-07-17 00:26:36.111 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Cliente/v1 application/json 46
+2020-07-17 00:26:36.232 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:26:36.242 +02:00 [INF] Authorization was successful.
+2020-07-17 00:26:36.243 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:36.281 +02:00 [INF] Route matched with {action = "Create", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:26:37.371 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:26:37.758 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 6), @p1='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Clientes" ("Apellido", "Nombre")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Clientes"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2020-07-17 00:26:37.839 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Cliente'.
+2020-07-17 00:26:37.842 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI) in 1560.5586ms
+2020-07-17 00:26:37.844 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:37.852 +02:00 [INF] Request finished in 1741.3586ms 200 application/json; charset=utf-8
+2020-07-17 00:26:42.668 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Cliente/v1 application/json 46
+2020-07-17 00:26:42.680 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:26:42.686 +02:00 [INF] Authorization was successful.
+2020-07-17 00:26:42.687 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:42.690 +02:00 [INF] Route matched with {action = "Create", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:26:42.739 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:26:42.745 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 6), @p1='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Clientes" ("Apellido", "Nombre")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Clientes"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2020-07-17 00:26:42.749 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Cliente'.
+2020-07-17 00:26:42.751 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI) in 59.61ms
+2020-07-17 00:26:42.751 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:42.752 +02:00 [INF] Request finished in 84.837ms 200 application/json; charset=utf-8
+2020-07-17 00:26:46.990 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Cliente/v1 application/json 28
+2020-07-17 00:26:46.992 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:26:46.995 +02:00 [INF] Authorization was successful.
+2020-07-17 00:26:46.995 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:46.996 +02:00 [INF] Route matched with {action = "Create", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:26:47.029 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-07-17 00:26:47.032 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI) in 34.4282ms
+2020-07-17 00:26:47.033 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:47.034 +02:00 [INF] Request finished in 45.5641ms 400 application/problem+json; charset=utf-8
+2020-07-17 00:26:54.532 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Cliente/v1 application/json 46
+2020-07-17 00:26:54.534 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:26:54.536 +02:00 [INF] Authorization was successful.
+2020-07-17 00:26:54.536 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:54.537 +02:00 [INF] Route matched with {action = "Create", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:26:54.556 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:26:54.564 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 6), @p1='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Clientes" ("Apellido", "Nombre")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Clientes"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2020-07-17 00:26:54.568 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Cliente'.
+2020-07-17 00:26:54.569 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI) in 31.096ms
+2020-07-17 00:26:54.570 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:54.572 +02:00 [INF] Request finished in 40.5484ms 200 application/json; charset=utf-8
+2020-07-17 00:26:55.422 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Cliente/v1 application/json 46
+2020-07-17 00:26:55.426 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:26:55.428 +02:00 [INF] Authorization was successful.
+2020-07-17 00:26:55.429 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:55.430 +02:00 [INF] Route matched with {action = "Create", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:26:55.444 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:26:55.450 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 6), @p1='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Clientes" ("Apellido", "Nombre")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Clientes"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2020-07-17 00:26:55.454 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Cliente'.
+2020-07-17 00:26:55.460 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI) in 28.7679ms
+2020-07-17 00:26:55.465 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:26:55.468 +02:00 [INF] Request finished in 46.6436ms 200 application/json; charset=utf-8
+2020-07-17 00:27:14.196 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Cliente/v1  
+2020-07-17 00:27:14.200 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:27:14.202 +02:00 [INF] Authorization was successful.
+2020-07-17 00:27:14.203 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Get (Placica.Core.WebAPI)'
+2020-07-17 00:27:14.230 +02:00 [INF] Route matched with {action = "Get", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:27:14.241 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:27:14.447 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Apellido", "c"."Nombre"
+FROM "Clientes" AS "c"
+2020-07-17 00:27:14.478 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Placica.Core.WebAPI.Models.Cliente, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-17 00:27:14.481 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Get (Placica.Core.WebAPI) in 250.2075ms
+2020-07-17 00:27:14.483 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Get (Placica.Core.WebAPI)'
+2020-07-17 00:27:14.484 +02:00 [INF] Request finished in 288.8793ms 200 application/json; charset=utf-8
+2020-07-17 00:27:18.933 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/Cliente/v1 application/json 46
+2020-07-17 00:27:18.937 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:27:18.938 +02:00 [INF] Authorization was successful.
+2020-07-17 00:27:18.939 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:27:18.940 +02:00 [INF] Route matched with {action = "Create", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:27:18.945 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:27:18.956 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 6), @p1='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Clientes" ("Apellido", "Nombre")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Clientes"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2020-07-17 00:27:18.960 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Cliente'.
+2020-07-17 00:27:18.960 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI) in 20.036ms
+2020-07-17 00:27:18.961 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Create (Placica.Core.WebAPI)'
+2020-07-17 00:27:18.961 +02:00 [INF] Request finished in 28.4547ms 200 application/json; charset=utf-8
+2020-07-17 00:27:53.235 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/api/Cliente/v1/2 application/json 46
+2020-07-17 00:27:53.239 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:27:53.239 +02:00 [INF] Authorization was successful.
+2020-07-17 00:27:53.240 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Update (Placica.Core.WebAPI)'
+2020-07-17 00:27:53.251 +02:00 [INF] Route matched with {action = "Update", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int64, Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:27:53.348 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-07-17 00:27:53.350 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Update (Placica.Core.WebAPI) in 98.6787ms
+2020-07-17 00:27:53.351 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Update (Placica.Core.WebAPI)'
+2020-07-17 00:27:53.352 +02:00 [INF] Request finished in 117.5251ms 400 text/plain; charset=utf-8
+2020-07-17 00:28:03.203 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/api/Cliente/v1/2 application/json 46
+2020-07-17 00:28:03.207 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:28:03.209 +02:00 [INF] Authorization was successful.
+2020-07-17 00:28:03.210 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Update (Placica.Core.WebAPI)'
+2020-07-17 00:28:03.211 +02:00 [INF] Route matched with {action = "Update", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int64, Placica.Core.WebAPI.Models.Cliente) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:28:03.229 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:28:03.242 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?', @p0='?' (Size = 6), @p1='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Clientes" SET "Apellido" = @p0, "Nombre" = @p1
+WHERE "Id" = @p2;
+SELECT changes();
+2020-07-17 00:28:03.250 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.Models.Cliente'.
+2020-07-17 00:28:03.252 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Update (Placica.Core.WebAPI) in 40.5146ms
+2020-07-17 00:28:03.256 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Update (Placica.Core.WebAPI)'
+2020-07-17 00:28:03.257 +02:00 [INF] Request finished in 53.605ms 200 application/json; charset=utf-8
+2020-07-17 00:28:22.014 +02:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:5001/api/Cliente/v1/5  
+2020-07-17 00:28:22.021 +02:00 [INF] Successfully validated the token.
+2020-07-17 00:28:22.022 +02:00 [INF] Authorization was successful.
+2020-07-17 00:28:22.023 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.DeleteOwner (Placica.Core.WebAPI)'
+2020-07-17 00:28:22.034 +02:00 [INF] Route matched with {action = "DeleteOwner", controller = "Cliente"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteOwner(Int64) on controller Placica.Core.WebAPI.Controllers.V1.ClienteController (Placica.Core.WebAPI).
+2020-07-17 00:28:22.051 +02:00 [INF] Entity Framework Core 3.1.6 initialized 'PlacicaContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: MigrationsAssembly=Placica.Core.WebAPI 
+2020-07-17 00:28:22.169 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Apellido", "c"."Nombre"
+FROM "Clientes" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2020-07-17 00:28:22.179 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Clientes"
+WHERE "Id" = @p0;
+SELECT changes();
+2020-07-17 00:28:22.184 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[Placica.Core.WebAPI.Models.Cliente, Placica.Core.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-07-17 00:28:22.197 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.DeleteOwner (Placica.Core.WebAPI) in 161.749ms
+2020-07-17 00:28:22.197 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.DeleteOwner (Placica.Core.WebAPI)'
+2020-07-17 00:28:22.198 +02:00 [INF] Request finished in 184.4643ms 200 application/json; charset=utf-8

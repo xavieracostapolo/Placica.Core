@@ -1376,3 +1376,18 @@ System.ArgumentException: An item with the same key has already been added. Key:
 2020-07-16 23:18:53.220 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.V1.ClienteController.Get (Placica.Core.WebAPI) in 6.9904ms
 2020-07-16 23:18:53.221 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.V1.ClienteController.Get (Placica.Core.WebAPI)'
 2020-07-16 23:18:53.222 +02:00 [INF] Request finished in 19.2102ms 200 application/json; charset=utf-8
+2020-07-16 23:24:59.638 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2020-07-16 23:24:59.651 +02:00 [INF] Request finished in 14.3097ms 200 text/html;charset=utf-8
+2020-07-16 23:24:59.927 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-07-16 23:24:59.989 +02:00 [INF] Request finished in 62.1274ms 200 application/json;charset=utf-8
+2020-07-16 23:25:00.001 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+2020-07-16 23:25:00.004 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-07-16 23:25:00.005 +02:00 [INF] Request finished in 4.1515ms 200 image/png
+2020-07-16 23:25:24.113 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/WeatherForecast  
+2020-07-16 23:25:24.118 +02:00 [INF] Executing endpoint 'Placica.Core.WebAPI.Controllers.WeatherForecastController.Get (Placica.Core.WebAPI)'
+2020-07-16 23:25:24.128 +02:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Placica.Core.WebAPI.WeatherForecast] Get() on controller Placica.Core.WebAPI.Controllers.WeatherForecastController (Placica.Core.WebAPI).
+2020-07-16 23:25:24.134 +02:00 [INF] Executing ObjectResult, writing value of type 'Placica.Core.WebAPI.WeatherForecast[]'.
+2020-07-16 23:25:24.145 +02:00 [INF] Executed action Placica.Core.WebAPI.Controllers.WeatherForecastController.Get (Placica.Core.WebAPI) in 16.9168ms
+2020-07-16 23:25:24.146 +02:00 [INF] Executed endpoint 'Placica.Core.WebAPI.Controllers.WeatherForecastController.Get (Placica.Core.WebAPI)'
+2020-07-16 23:25:24.147 +02:00 [INF] Request finished in 34.8524ms 200 application/json; charset=utf-8
+2020-07-16 23:54:23.649 +02:00 [INF] Application is shutting down...

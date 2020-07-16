@@ -35,10 +35,16 @@ TODO: Guide users through getting your code up and running on their own system. 
 
 
 # Serilog
-https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
+* https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
 
 # JWT
-https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+* https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
 
 # Validation
-https://docs.fluentvalidation.net/en/latest/start.html
+* https://docs.fluentvalidation.net/en/latest/start.html
+
+# SqlLite 
+* https://elanderson.net/2019/11/asp-net-core-3-add-entity-framework-core-to-existing-project/
+* dotnet ef migrations add Initial -o Data/SqlliteMigrations --project 2.\ Distribution/Placica.Core.WebAPI/
+* dotnet ef database update --project 2.\ Distribution/Placica.Core.WebAPI/
+* Done. To undo this action, use 'ef migrations remove'
