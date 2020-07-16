@@ -37,5 +37,8 @@ TODO: Guide users through getting your code up and running on their own system. 
 # Serilog
 https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
 
-#JWT
+# JWT
 https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+
+# Validation
+https://docs.fluentvalidation.net/en/latest/start.html

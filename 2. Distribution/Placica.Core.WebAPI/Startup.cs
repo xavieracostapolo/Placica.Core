@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -43,7 +44,8 @@ namespace Placica.Core.WebAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.ConfigureCors();
             services.AddTokenAuthentication(Configuration);
-            services.AddControllers();
+            services.AddControllers()
+            .AddFluentValidation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
