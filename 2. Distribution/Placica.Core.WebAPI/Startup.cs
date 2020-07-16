@@ -30,14 +30,6 @@ namespace Placica.Core.WebAPI
                 opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
             );
 
-            services.AddDependencyDistribution();
-            services.AddDependencyApplication();
-            services.AddDependencyDomain();
-            services.AddDependencyInfraestructure();
-            
-            // Start Registering and Initializing AutoMapper
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());  
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -47,8 +39,15 @@ namespace Placica.Core.WebAPI
                     Version = "V1"
                 });
             });
-            
+
+            services.AddDependencyDistribution();
+            services.AddDependencyApplication();
+            services.AddDependencyDomain();
+            services.AddDependencyInfraestructure();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.ConfigureCors();
+            services.AddTokenAuthentication(Configuration); 
             services.AddControllers();
         }
 
@@ -60,13 +59,8 @@ namespace Placica.Core.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
-
-            app.ConfigureCustomExceptionMiddleware();
-
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
@@ -74,7 +68,11 @@ namespace Placica.Core.WebAPI
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Placica Api V1");
             });
 
+            app.ConfigureCustomExceptionMiddleware();
+
+            app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

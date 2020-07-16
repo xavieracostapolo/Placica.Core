@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Placica.Core.WebAPI.Helpers;
@@ -9,6 +10,7 @@ namespace Placica.Core.WebAPI.Controllers.V1
     [ModelValidation]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public abstract class BaseController<TModel> : Controller
         where TModel : class
     {
