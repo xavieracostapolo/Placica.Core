@@ -9,25 +9,33 @@ TODO: Guide users through getting your code up and running on their own system. 
 4.	API references
 
 # Creacion de la solucion y proyecto
-dotnet new sln -n Placica.Core
-dotnet new webapi -o "2. Distribution/Placica.Core.WebAPI" -n Placica.Core.WebAPI -f netcoreapp3.1
-dotnet new classlib -o "3. Application/Placica.Core.Contracts.ServiceLibrary" -n Placica.Core.Contracts.ServiceLibrary -f netcoreapp3.1
-dotnet new classlib -o "3. Application/Placica.Core.Impl.ServiceLibrary" -n Placica.Core.Impl.ServiceLibrary -f netcoreapp3.1
-dotnet new classlib -o "4. Domain/Placica.Core.Library" -n Placica.Core.Library -f netcoreapp3.1
-dotnet new classlib -o "5. Infraestructure/Placica.Core.Infraestructure.Data" -n Placica.Core.Infraestructure.Data -f netcoreapp3.1
 
-dotnet sln Placica.Core.sln add 2.\ Distribution/Placica.Core.WebAPI
-dotnet sln Placica.Core.sln add 3.\ Application/Placica.Core.Contracts.ServiceLibrary/
-dotnet sln Placica.Core.sln add 3.\ Application/Placica.Core.Impl.ServiceLibrary/
-dotnet sln Placica.Core.sln add 4.\ Domain/Placica.Core.Library/
-dotnet sln Placica.Core.sln add 5.\ Infraestructure/Placica.Core.Infraestructure.Data/
+* dotnet new sln -n Placica.Core
+* dotnet new webapi -o "2. Distribution/Placica.Core.WebAPI" -n Placica.Core.WebAPI -f netcoreapp3.1
+* dotnet new classlib -o "3. Application/Placica.Core.Contracts.ServiceLibrary" -n Placica.Core.Contracts.ServiceLibrary -f netcoreapp3.1
+* dotnet new classlib -o "3. Application/Placica.Core.Impl.ServiceLibrary" -n Placica.Core.Impl.ServiceLibrary -f netcoreapp3.1
+* dotnet new classlib -o "4. Domain/Placica.Core.Library" -n Placica.Core.Library -f netcoreapp3.1
+* dotnet new classlib -o "5. Infraestructure/Placica.Core.Infraestructure.Data" -n Placica.Core.Infraestructure.Data -f netcoreapp3.1
 
-dotnet add 5.\ Infraestructure/Placica.Core.Infraestructure.Data/ reference 4.\ Domain/Placica.Core.Library/
-dotnet add 3.\ Application/Placica.Core.Impl.ServiceLibrary/ reference 4.\ Domain/Placica.Core.Library/
-dotnet add 3.\ Application/Placica.Core.Impl.ServiceLibrary/ reference 3.\ Application/Placica.Core.Contracts.ServiceLibrary/
-dotnet add 2.\ Distribution/Placica.Core.WebAPI reference 3.\ Application/Placica.Core.Contracts.ServiceLibrary/
-dotnet add 2.\ Distribution/Placica.Core.WebAPI reference 3.\ Application/Placica.Core.Impl.ServiceLibrary/
-dotnet add 2.\ Distribution/Placica.Core.WebAPI reference 5.\ Infraestructure/Placica.Core.Infraestructure.Data/
+* dotnet sln Placica.Core.sln add 2.\ Distribution/Placica.Core.WebAPI
+* dotnet sln Placica.Core.sln add 3.\ Application/Placica.Core.Contracts.ServiceLibrary/
+* dotnet sln Placica.Core.sln add 3.\ Application/Placica.Core.Impl.ServiceLibrary/
+* dotnet sln Placica.Core.sln add 4.\ Domain/Placica.Core.Library/
+* dotnet sln Placica.Core.sln add 5.\ Infraestructure/Placica.Core.Infraestructure.Data/
 
-dotnet build
-dotnet run -p 2.\ Distribution/Placica.Core.WebAPI/
+* dotnet add 5.\ Infraestructure/Placica.Core.Infraestructure.Data/ reference 4.\ Domain/Placica.Core.Library/
+* dotnet add 3.\ Application/Placica.Core.Impl.ServiceLibrary/ reference 4.\ Domain/Placica.Core.Library/
+* dotnet add 3.\ Application/Placica.Core.Impl.ServiceLibrary/ reference 3.\ Application/Placica.Core.Contracts.ServiceLibrary/
+* dotnet add 2.\ Distribution/Placica.Core.WebAPI reference 3.\ Application/Placica.Core.Contracts.ServiceLibrary/
+* dotnet add 2.\ Distribution/Placica.Core.WebAPI reference 3.\ Application/Placica.Core.Impl.ServiceLibrary/
+* dotnet add 2.\ Distribution/Placica.Core.WebAPI reference 5.\ Infraestructure/Placica.Core.Infraestructure.Data/
+ 
+* dotnet build
+* dotnet run -p 2.\ Distribution/Placica.Core.WebAPI/
+
+
+# Serilog
+https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
+
+#JWT
+https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api

@@ -1,15 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Placica.Core.Impl.ServiceLibrary.Helpers;
+using Placica.Core.Infraestructure.Data.Context;
+using Placica.Core.Infraestructure.Data.Helpers;
+using Placica.Core.Library.Helpers;
+using Placica.Core.WebAPI.Helpers;
 
 namespace Placica.Core.WebAPI
 {
@@ -25,6 +26,23 @@ namespace Placica.Core.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<PlacicaContext>(opt =>
+                opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
+            );
+
+            services.AddSwaggerGen(c =>
+            {
+                c.ConfigureCustomSwaggerOptions();
+            });
+
+            services.AddDependencyDistribution();
+            services.AddDependencyApplication();
+            services.AddDependencyDomain();
+            services.AddDependencyInfraestructure();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.ConfigureCors();
+            services.AddTokenAuthentication(Configuration);
             services.AddControllers();
         }
 
@@ -36,10 +54,20 @@ namespace Placica.Core.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Placica Api V1");
+            });
+
+            app.ConfigureCustomExceptionMiddleware();
+
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
