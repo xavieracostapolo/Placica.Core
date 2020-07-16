@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Reflection;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Placica.Core.Impl.ServiceLibrary.Helpers;
 using Placica.Core.Infraestructure.Data.Context;
 using Placica.Core.Infraestructure.Data.Helpers;
@@ -36,7 +39,19 @@ namespace Placica.Core.WebAPI
                 {
                     Title = "Placica API.",
                     Description = "Metodos de la API de la Placica App.",
-                    Version = "V1"
+                    Version = "V1",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Shayne Boyer",
+                        Email = string.Empty,
+                        Url = new Uri("https://twitter.com/spboyer"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under LICX",
+                        Url = new Uri("https://example.com/license"),
+                    }
                 });
             });
 
@@ -47,7 +62,7 @@ namespace Placica.Core.WebAPI
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.ConfigureCors();
-            services.AddTokenAuthentication(Configuration); 
+            services.AddTokenAuthentication(Configuration);
             services.AddControllers();
         }
 

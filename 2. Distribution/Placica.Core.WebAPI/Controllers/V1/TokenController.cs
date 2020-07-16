@@ -16,11 +16,11 @@ namespace Placica.Core.WebAPI.Controllers.V1
         }  
   
         [HttpGet]  
-        public string GetRandomToken()  
+        public IActionResult GetRandomToken()  
         {  
             var jwt = new JwtService(_config);  
-            var token = jwt.GenerateSecurityToken("fake@email.com");  
-            return token;  
+            var token = jwt.GenerateSecurityToken("sitivo5@hotmail.com");  
+            return Ok(new { Token = token });
         }  
     } 
 }
