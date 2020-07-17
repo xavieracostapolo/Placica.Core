@@ -1,27 +1,24 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.Data.EntityFrameworkCore.Metadata;
 
-namespace Placica.Core.WebAPI.Data.SqlliteMigrations
+namespace Placica.Core.WebAPI.Migrations
 {
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "Data");
-
             migrationBuilder.CreateTable(
                 name: "Categorias",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     Descripcion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -31,16 +28,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "Parametros",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
                     Descripcion = table.Column<string>(nullable: true)
                 },
@@ -51,19 +47,18 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "ParametroDetalles",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     Descripcion = table.Column<string>(nullable: true),
                     Value = table.Column<string>(nullable: true),
-                    ParametroId = table.Column<long>(nullable: true)
+                    ParametroId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,24 +66,22 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_ParametroDetalles_Parametros_ParametroId",
                         column: x => x.ParametroId,
-                        principalSchema: "Data",
                         principalTable: "Parametros",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Clientes",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     TipoIdentificacionId = table.Column<long>(nullable: true),
                     Identificacion = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
@@ -103,7 +96,6 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_Clientes_ParametroDetalles_TipoIdentificacionId",
                         column: x => x.TipoIdentificacionId,
-                        principalSchema: "Data",
                         principalTable: "ParametroDetalles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -111,16 +103,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "Empresas",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     TipoIdentificacionId = table.Column<long>(nullable: true),
                     Identificacion = table.Column<string>(nullable: true),
                     RazonSocial = table.Column<string>(nullable: true),
@@ -141,14 +132,12 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_Empresas_Parametros_TipoId",
                         column: x => x.TipoId,
-                        principalSchema: "Data",
                         principalTable: "Parametros",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Empresas_ParametroDetalles_TipoIdentificacionId",
                         column: x => x.TipoIdentificacionId,
-                        principalSchema: "Data",
                         principalTable: "ParametroDetalles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -156,16 +145,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "EmpresaCategorias",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     EmpresaId = table.Column<long>(nullable: false),
                     CategoriaId = table.Column<long>(nullable: false)
                 },
@@ -175,14 +163,12 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_EmpresaCategorias_Categorias_CategoriaId",
                         column: x => x.CategoriaId,
-                        principalSchema: "Data",
                         principalTable: "Categorias",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_EmpresaCategorias_Empresas_EmpresaId",
                         column: x => x.EmpresaId,
-                        principalSchema: "Data",
                         principalTable: "Empresas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -190,16 +176,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "Pedidos",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     FechaDoc = table.Column<DateTime>(nullable: false),
                     EmpresaId = table.Column<long>(nullable: false),
                     ClienteId = table.Column<long>(nullable: false),
@@ -228,14 +213,12 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_Pedidos_Clientes_ClienteId",
                         column: x => x.ClienteId,
-                        principalSchema: "Data",
                         principalTable: "Clientes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Pedidos_Empresas_EmpresaId",
                         column: x => x.EmpresaId,
-                        principalSchema: "Data",
                         principalTable: "Empresas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -243,16 +226,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "Productos",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     Imagen = table.Column<string>(nullable: true),
                     Nombre = table.Column<string>(nullable: true),
                     Descripcion = table.Column<string>(nullable: true),
@@ -267,14 +249,12 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_Productos_Categorias_CategoriaId",
                         column: x => x.CategoriaId,
-                        principalSchema: "Data",
                         principalTable: "Categorias",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Productos_Empresas_EmpresaId",
                         column: x => x.EmpresaId,
-                        principalSchema: "Data",
                         principalTable: "Empresas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -282,16 +262,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "Calificaciones",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     ParametroDetalleId = table.Column<long>(nullable: false),
                     PedidoId = table.Column<long>(nullable: false),
                     ProductoId = table.Column<long>(nullable: true),
@@ -303,14 +282,12 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_Calificaciones_ParametroDetalles_ParametroDetalleId",
                         column: x => x.ParametroDetalleId,
-                        principalSchema: "Data",
                         principalTable: "ParametroDetalles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Calificaciones_Productos_ProductoId",
                         column: x => x.ProductoId,
-                        principalSchema: "Data",
                         principalTable: "Productos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -318,16 +295,15 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
 
             migrationBuilder.CreateTable(
                 name: "PedidoDetalles",
-                schema: "Data",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     UserCreate = table.Column<string>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
                     UserModify = table.Column<string>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModify = table.Column<DateTime>(nullable: false),
                     PedidoId = table.Column<long>(nullable: false),
                     ProductoId = table.Column<long>(nullable: false),
                     Cantidad = table.Column<int>(nullable: false),
@@ -339,100 +315,105 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
                     table.ForeignKey(
                         name: "FK_PedidoDetalles_Pedidos_PedidoId",
                         column: x => x.PedidoId,
-                        principalSchema: "Data",
                         principalTable: "Pedidos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PedidoDetalles_Productos_ProductoId",
                         column: x => x.ProductoId,
-                        principalSchema: "Data",
                         principalTable: "Productos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Parametros",
+                columns: new[] { "Id", "DateCreated", "DateModify", "Descripcion", "Status", "Titulo", "UserCreate", "UserModify" },
+                values: new object[] { 1L, new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(5060), new DateTime(2020, 7, 18, 0, 23, 26, 824, DateTimeKind.Local).AddTicks(8300), "Tipo Identificacion", true, "TIPOIDENTIFICACION", "System", "System" });
+
+            migrationBuilder.InsertData(
+                table: "Parametros",
+                columns: new[] { "Id", "DateCreated", "DateModify", "Descripcion", "Status", "Titulo", "UserCreate", "UserModify" },
+                values: new object[] { 2L, new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(6050), new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(6020), "Genero", true, "GENERO", "System", "System" });
+
+            migrationBuilder.InsertData(
+                table: "ParametroDetalles",
+                columns: new[] { "Id", "DateCreated", "DateModify", "Descripcion", "ParametroId", "Status", "UserCreate", "UserModify", "Value" },
+                values: new object[,]
+                {
+                    { 1L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6290), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6260), "Cedula", 1L, true, "System", "System", "Cedula" },
+                    { 2L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6410), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6400), "NIT", 1L, true, "System", "System", "NIT" },
+                    { 3L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6420), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6420), "Masculino", 2L, true, "System", "System", "M" },
+                    { 4L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6430), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6430), "Femenino", 2L, true, "System", "System", "F" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Calificaciones_ParametroDetalleId",
-                schema: "Data",
                 table: "Calificaciones",
                 column: "ParametroDetalleId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Calificaciones_ProductoId",
-                schema: "Data",
                 table: "Calificaciones",
                 column: "ProductoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clientes_TipoIdentificacionId",
-                schema: "Data",
                 table: "Clientes",
                 column: "TipoIdentificacionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EmpresaCategorias_CategoriaId",
-                schema: "Data",
                 table: "EmpresaCategorias",
                 column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EmpresaCategorias_EmpresaId",
-                schema: "Data",
                 table: "EmpresaCategorias",
                 column: "EmpresaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Empresas_TipoId",
-                schema: "Data",
                 table: "Empresas",
                 column: "TipoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Empresas_TipoIdentificacionId",
-                schema: "Data",
                 table: "Empresas",
                 column: "TipoIdentificacionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ParametroDetalles_ParametroId",
-                schema: "Data",
                 table: "ParametroDetalles",
                 column: "ParametroId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PedidoDetalles_PedidoId",
-                schema: "Data",
                 table: "PedidoDetalles",
                 column: "PedidoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PedidoDetalles_ProductoId",
-                schema: "Data",
                 table: "PedidoDetalles",
                 column: "ProductoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_ClienteId",
-                schema: "Data",
                 table: "Pedidos",
                 column: "ClienteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_EmpresaId",
-                schema: "Data",
                 table: "Pedidos",
                 column: "EmpresaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Productos_CategoriaId",
-                schema: "Data",
                 table: "Productos",
                 column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Productos_EmpresaId",
-                schema: "Data",
                 table: "Productos",
                 column: "EmpresaId");
         }
@@ -440,44 +421,34 @@ namespace Placica.Core.WebAPI.Data.SqlliteMigrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Calificaciones",
-                schema: "Data");
+                name: "Calificaciones");
 
             migrationBuilder.DropTable(
-                name: "EmpresaCategorias",
-                schema: "Data");
+                name: "EmpresaCategorias");
 
             migrationBuilder.DropTable(
-                name: "PedidoDetalles",
-                schema: "Data");
+                name: "PedidoDetalles");
 
             migrationBuilder.DropTable(
-                name: "Pedidos",
-                schema: "Data");
+                name: "Pedidos");
 
             migrationBuilder.DropTable(
-                name: "Productos",
-                schema: "Data");
+                name: "Productos");
 
             migrationBuilder.DropTable(
-                name: "Clientes",
-                schema: "Data");
+                name: "Clientes");
 
             migrationBuilder.DropTable(
-                name: "Categorias",
-                schema: "Data");
+                name: "Categorias");
 
             migrationBuilder.DropTable(
-                name: "Empresas",
-                schema: "Data");
+                name: "Empresas");
 
             migrationBuilder.DropTable(
-                name: "ParametroDetalles",
-                schema: "Data");
+                name: "ParametroDetalles");
 
             migrationBuilder.DropTable(
-                name: "Parametros",
-                schema: "Data");
+                name: "Parametros");
         }
     }
 }

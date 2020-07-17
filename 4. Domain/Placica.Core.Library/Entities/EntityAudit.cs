@@ -9,14 +9,12 @@ namespace Placica.Core.Library.Entities
         [Required]
         public string UserCreate { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public DateTime DateCreated { get; set; }
 
         [Required]
         public string UserModify { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Required]
         public DateTime DateModify { get; set; }
 

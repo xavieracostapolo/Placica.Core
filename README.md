@@ -52,5 +52,10 @@ TODO: Guide users through getting your code up and running on their own system. 
 
 1) dotnet ef database drop --project 2.\ Distribution/Placica.Core.WebAPI/
 2) dotnet ef migrations remove --project 2.\ Distribution/Placica.Core.WebAPI/
-3) dotnet ef migrations add Initial -o Data/SqlliteMigrations --project 2.\ Distribution/Placica.Core.WebAPI/
+3) dotnet ef migrations add Initial --project 2.\ Distribution/Placica.Core.WebAPI/
 4) dotnet ef database update --project 2.\ Distribution/Placica.Core.WebAPI/
+
+5) dotnet ef migrations add MigrateParametrosInitial  --project 2.\ Distribution/Placica.Core.WebAPI/
+
+
+https://codehandbook.org/how-to-connect-to-mysql-running-in-docker-container-from-localhost/
