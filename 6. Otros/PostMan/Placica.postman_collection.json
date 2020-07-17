@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "cd0829e0-3cd3-4197-ad0b-6cf5c9100696",
+		"name": "Placica",
+		"description": "Metodos de placica store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET/api/Token/v1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "10efb84e-1087-4ade-beb6-e1ceeb0d23ca",
+						"exec": [
+							"var token = nombre = pm.response.json().token;",
+							"pm.environment.set(\"token\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "localhost:5001",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/api/Token/v1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Token",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/api/Cliente/v1",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "localhost:5001",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"nombre\": \"string\",\n  \"apellido\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api/Cliente/v1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Cliente",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/api/Cliente/v1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/api/Cliente/v1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Cliente",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

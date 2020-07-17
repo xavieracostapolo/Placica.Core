@@ -33,6 +33,7 @@ TODO: Guide users through getting your code up and running on their own system. 
 * dotnet build
 * dotnet run -p 2.\ Distribution/Placica.Core.WebAPI/
 
+* dotnet add 2.\ Distribution/Placica.Core.WebAPI/ package Microsoft.EntityFrameworkCore.Design
 
 # Serilog
 * https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
@@ -48,3 +49,8 @@ TODO: Guide users through getting your code up and running on their own system. 
 * dotnet ef migrations add Initial -o Data/SqlliteMigrations --project 2.\ Distribution/Placica.Core.WebAPI/
 * dotnet ef database update --project 2.\ Distribution/Placica.Core.WebAPI/
 * Done. To undo this action, use 'ef migrations remove'
+
+1) dotnet ef database drop --project 2.\ Distribution/Placica.Core.WebAPI/
+2) dotnet ef migrations remove --project 2.\ Distribution/Placica.Core.WebAPI/
+3) dotnet ef migrations add Initial -o Data/SqlliteMigrations --project 2.\ Distribution/Placica.Core.WebAPI/
+4) dotnet ef database update --project 2.\ Distribution/Placica.Core.WebAPI/

@@ -14,8 +14,16 @@ namespace Placica.Core.Infraestructure.Data.Context
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<EmpresaCategoria> EmpresaCategorias { get; set; }
+        public DbSet<Parametro> Parametro { get; set; }
+        public DbSet<ParametroDetalle> ParametroDetalle { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<PedidoDetalle> PedidoDetalles { get; set; }
         public DbSet<Producto> Productos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("Data");
+        }
     }
 }
