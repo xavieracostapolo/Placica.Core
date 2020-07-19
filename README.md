@@ -57,5 +57,16 @@ TODO: Guide users through getting your code up and running on their own system. 
 
 5) dotnet ef migrations add MigrateParametrosInitial  --project 2.\ Distribution/Placica.Core.WebAPI/
 
+# Docker
+* Docker % docker pull mysql:latest
+* docker run -p 3307:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql 
+
+* docker pull redis:latest
+* docker run -p 6379:6379 --name ps-redis -d redis
 
 https://codehandbook.org/how-to-connect-to-mysql-running-in-docker-container-from-localhost/
+
+https://github.com/thepirat000/Audit.NET
+https://github.com/thepirat000/Audit.NET/blob/master/src/Audit.NET.Redis/README.md
+
+https://gavilan.blog/2019/08/04/audit-by-columns-with-entity-framework-core/

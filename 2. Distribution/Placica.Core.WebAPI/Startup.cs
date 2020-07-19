@@ -1,4 +1,7 @@
 using System;
+using System.Linq;
+using Audit.Core;
+using Audit.EntityFramework.Providers;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using Placica.Core.Impl.ServiceLibrary.Helpers;
 using Placica.Core.Infraestructure.Data.Context;
 using Placica.Core.Infraestructure.Data.Helpers;
@@ -30,7 +34,7 @@ namespace Placica.Core.WebAPI
             services.AddDbContext<PlacicaContext>(opt =>
                 // opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
                 //opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Placica.Core.WebAPI"))
-                opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection"), b => 
+                opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection"), b =>
                     b.MigrationsAssembly("Placica.Core.WebAPI")
                 )
             );
@@ -39,6 +43,30 @@ namespace Placica.Core.WebAPI
             {
                 c.ConfigureCustomSwaggerOptions();
             });
+
+            // Store audits as strings.
+
+            Audit.Core.Configuration.DataProvider = new EntityFrameworkDataProvider()
+            {
+                AuditEntityAction = (evt, entry, auditEntity) =>
+                {
+                    var a = (dynamic)auditEntity;
+                    a.AuditDate = DateTime.UtcNow;
+                    a.UserName = evt.Environment.UserName;
+                    a.AuditAction = entry.Action; // Insert, Update, Delete
+                    return true; // return false to ignore the audit
+                }
+            };
+
+            Audit.Core.Configuration.Setup()
+                .UseRedis(redis => redis
+                    .ConnectionString("localhost:6379,allowAdmin=true")
+                    .AsString(str => str
+                        .Key(ev => $"{ev.EventType}:{Guid.NewGuid()}")
+                    )
+                );
+
+            AuditScope.Log("Startup Configure Services.", new { ExtraField = "Inicio de la aplicacion." });
 
             services.AddDependencyDistribution();
             services.AddDependencyApplication();
@@ -79,6 +107,11 @@ namespace Placica.Core.WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            Audit.Core.Configuration.AddCustomAction(ActionType.OnScopeCreated, scope =>
+            {
+                scope.Event.Environment.UserName = "xavier.acosta";
             });
         }
     }

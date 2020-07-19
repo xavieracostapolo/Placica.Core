@@ -23,11 +23,17 @@ namespace Placica.Core.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<long>("ParametroDetalleId")
                         .HasColumnType("bigint");
@@ -40,14 +46,6 @@ namespace Placica.Core.WebAPI.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<int>("Valor")
                         .HasColumnType("int");
@@ -67,25 +65,23 @@ namespace Placica.Core.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
 
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -102,11 +98,11 @@ namespace Placica.Core.WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Direccion")
                         .HasColumnType("text");
@@ -116,6 +112,12 @@ namespace Placica.Core.WebAPI.Migrations
 
                     b.Property<string>("Identificacion")
                         .HasColumnType("text");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -129,14 +131,6 @@ namespace Placica.Core.WebAPI.Migrations
 
                     b.Property<long?>("TipoIdentificacionId")
                         .HasColumnType("bigint");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -160,11 +154,11 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<string>("Color3")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Direccion")
                         .HasColumnType("text");
@@ -177,6 +171,12 @@ namespace Placica.Core.WebAPI.Migrations
 
                     b.Property<string>("Logo")
                         .HasColumnType("text");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("RazonSocial")
                         .HasColumnType("text");
@@ -199,14 +199,6 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<long?>("TipoIdentificacionId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("TipoId");
@@ -225,25 +217,23 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<long>("CategoriaId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<long>("EmpresaId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -260,27 +250,25 @@ namespace Placica.Core.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
                     b.Property<string>("Titulo")
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -291,24 +279,24 @@ namespace Placica.Core.WebAPI.Migrations
                         new
                         {
                             Id = 1L,
-                            DateCreated = new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(5060),
-                            DateModify = new DateTime(2020, 7, 18, 0, 23, 26, 824, DateTimeKind.Local).AddTicks(8300),
+                            CreatedByUser = "System",
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(1710), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Tipo Identificacion",
+                            ModifiedByUser = "System",
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(2410), new TimeSpan(0, 0, 0, 0, 0)),
                             Status = true,
-                            Titulo = "TIPOIDENTIFICACION",
-                            UserCreate = "System",
-                            UserModify = "System"
+                            Titulo = "TIPOIDENTIFICACION"
                         },
                         new
                         {
                             Id = 2L,
-                            DateCreated = new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(6050),
-                            DateModify = new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(6020),
+                            CreatedByUser = "System",
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3230), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Genero",
+                            ModifiedByUser = "System",
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3240), new TimeSpan(0, 0, 0, 0, 0)),
                             Status = true,
-                            Titulo = "GENERO",
-                            UserCreate = "System",
-                            UserModify = "System"
+                            Titulo = "GENERO"
                         });
                 });
 
@@ -318,28 +306,26 @@ namespace Placica.Core.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<long>("ParametroId")
                         .HasColumnType("bigint");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("Value")
                         .HasColumnType("text");
@@ -354,49 +340,49 @@ namespace Placica.Core.WebAPI.Migrations
                         new
                         {
                             Id = 1L,
-                            DateCreated = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6290),
-                            DateModify = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6260),
+                            CreatedByUser = "System",
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7390), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Cedula",
+                            ModifiedByUser = "System",
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7400), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 1L,
                             Status = true,
-                            UserCreate = "System",
-                            UserModify = "System",
                             Value = "Cedula"
                         },
                         new
                         {
                             Id = 2L,
-                            DateCreated = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6410),
-                            DateModify = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6400),
+                            CreatedByUser = "System",
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "NIT",
+                            ModifiedByUser = "System",
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 1L,
                             Status = true,
-                            UserCreate = "System",
-                            UserModify = "System",
                             Value = "NIT"
                         },
                         new
                         {
                             Id = 3L,
-                            DateCreated = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6420),
-                            DateModify = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6420),
+                            CreatedByUser = "System",
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Masculino",
+                            ModifiedByUser = "System",
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 2L,
                             Status = true,
-                            UserCreate = "System",
-                            UserModify = "System",
                             Value = "M"
                         },
                         new
                         {
                             Id = 4L,
-                            DateCreated = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6430),
-                            DateModify = new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6430),
+                            CreatedByUser = "System",
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Femenino",
+                            ModifiedByUser = "System",
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 2L,
                             Status = true,
-                            UserCreate = "System",
-                            UserModify = "System",
                             Value = "F"
                         });
                 });
@@ -431,11 +417,11 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<long>("ClienteId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<decimal>("Descuento")
                         .HasColumnType("decimal(18, 2)");
@@ -473,16 +459,14 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<decimal>("Impuesto")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18, 2)");
@@ -505,11 +489,17 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<long>("PedidoId")
                         .HasColumnType("bigint");
@@ -519,14 +509,6 @@ namespace Placica.Core.WebAPI.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<decimal>("ValorUnitario")
                         .HasColumnType("decimal(18, 2)");
@@ -549,11 +531,11 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<long>("CategoriaId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DateModify")
-                        .HasColumnType("datetime");
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("text");
@@ -564,6 +546,12 @@ namespace Placica.Core.WebAPI.Migrations
                     b.Property<string>("Imagen")
                         .HasColumnType("text");
 
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("ModifiedDate")
+                        .HasColumnType("timestamp");
+
                     b.Property<string>("Nombre")
                         .HasColumnType("text");
 
@@ -572,14 +560,6 @@ namespace Placica.Core.WebAPI.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserCreate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserModify")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(18, 2)");

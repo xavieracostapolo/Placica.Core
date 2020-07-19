@@ -14,11 +14,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Descripcion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -32,11 +32,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
                     Descripcion = table.Column<string>(nullable: true)
                 },
@@ -51,11 +51,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Descripcion = table.Column<string>(nullable: true),
                     Value = table.Column<string>(nullable: true),
                     ParametroId = table.Column<long>(nullable: false)
@@ -77,11 +77,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     TipoIdentificacionId = table.Column<long>(nullable: true),
                     Identificacion = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
@@ -107,11 +107,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     TipoIdentificacionId = table.Column<long>(nullable: true),
                     Identificacion = table.Column<string>(nullable: true),
                     RazonSocial = table.Column<string>(nullable: true),
@@ -149,11 +149,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     EmpresaId = table.Column<long>(nullable: false),
                     CategoriaId = table.Column<long>(nullable: false)
                 },
@@ -180,11 +180,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     FechaDoc = table.Column<DateTime>(nullable: false),
                     EmpresaId = table.Column<long>(nullable: false),
                     ClienteId = table.Column<long>(nullable: false),
@@ -230,11 +230,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     Imagen = table.Column<string>(nullable: true),
                     Nombre = table.Column<string>(nullable: true),
                     Descripcion = table.Column<string>(nullable: true),
@@ -266,11 +266,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     ParametroDetalleId = table.Column<long>(nullable: false),
                     PedidoId = table.Column<long>(nullable: false),
                     ProductoId = table.Column<long>(nullable: true),
@@ -299,11 +299,11 @@ namespace Placica.Core.WebAPI.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserCreate = table.Column<string>(nullable: false),
-                    UserModify = table.Column<string>(nullable: false),
+                    CreatedByUser = table.Column<string>(nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(nullable: false),
+                    ModifiedByUser = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTimeOffset>(nullable: false),
                     Status = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModify = table.Column<DateTime>(nullable: false),
                     PedidoId = table.Column<long>(nullable: false),
                     ProductoId = table.Column<long>(nullable: false),
                     Cantidad = table.Column<int>(nullable: false),
@@ -328,23 +328,23 @@ namespace Placica.Core.WebAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "Parametros",
-                columns: new[] { "Id", "DateCreated", "DateModify", "Descripcion", "Status", "Titulo", "UserCreate", "UserModify" },
-                values: new object[] { 1L, new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(5060), new DateTime(2020, 7, 18, 0, 23, 26, 824, DateTimeKind.Local).AddTicks(8300), "Tipo Identificacion", true, "TIPOIDENTIFICACION", "System", "System" });
+                columns: new[] { "Id", "CreatedByUser", "CreatedDate", "Descripcion", "ModifiedByUser", "ModifiedDate", "Status", "Titulo" },
+                values: new object[] { 1L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(1710), new TimeSpan(0, 0, 0, 0, 0)), "Tipo Identificacion", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(2410), new TimeSpan(0, 0, 0, 0, 0)), true, "TIPOIDENTIFICACION" });
 
             migrationBuilder.InsertData(
                 table: "Parametros",
-                columns: new[] { "Id", "DateCreated", "DateModify", "Descripcion", "Status", "Titulo", "UserCreate", "UserModify" },
-                values: new object[] { 2L, new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(6050), new DateTime(2020, 7, 18, 0, 23, 26, 838, DateTimeKind.Local).AddTicks(6020), "Genero", true, "GENERO", "System", "System" });
+                columns: new[] { "Id", "CreatedByUser", "CreatedDate", "Descripcion", "ModifiedByUser", "ModifiedDate", "Status", "Titulo" },
+                values: new object[] { 2L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3230), new TimeSpan(0, 0, 0, 0, 0)), "Genero", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3240), new TimeSpan(0, 0, 0, 0, 0)), true, "GENERO" });
 
             migrationBuilder.InsertData(
                 table: "ParametroDetalles",
-                columns: new[] { "Id", "DateCreated", "DateModify", "Descripcion", "ParametroId", "Status", "UserCreate", "UserModify", "Value" },
+                columns: new[] { "Id", "CreatedByUser", "CreatedDate", "Descripcion", "ModifiedByUser", "ModifiedDate", "ParametroId", "Status", "Value" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6290), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6260), "Cedula", 1L, true, "System", "System", "Cedula" },
-                    { 2L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6410), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6400), "NIT", 1L, true, "System", "System", "NIT" },
-                    { 3L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6420), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6420), "Masculino", 2L, true, "System", "System", "M" },
-                    { 4L, new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6430), new DateTime(2020, 7, 18, 0, 23, 26, 840, DateTimeKind.Local).AddTicks(6430), "Femenino", 2L, true, "System", "System", "F" }
+                    { 1L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7390), new TimeSpan(0, 0, 0, 0, 0)), "Cedula", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7400), new TimeSpan(0, 0, 0, 0, 0)), 1L, true, "Cedula" },
+                    { 2L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)), "NIT", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)), 1L, true, "NIT" },
+                    { 3L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)), "Masculino", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)), 2L, true, "M" },
+                    { 4L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)), "Femenino", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)), 2L, true, "F" }
                 });
 
             migrationBuilder.CreateIndex(

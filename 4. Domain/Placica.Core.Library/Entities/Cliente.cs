@@ -6,7 +6,6 @@ namespace Placica.Core.Library.Entities
     [Table("Clientes")]
     public class Cliente : EntityAudit, IEntity
     {
-        [Key]
         public long Id { get; set; }
         public ParametroDetalle TipoIdentificacion { get; set; }
         public string Identificacion { get; set; }
