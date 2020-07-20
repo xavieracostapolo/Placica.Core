@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using Audit.Core;
 using Audit.EntityFramework.Providers;
 using AutoMapper;
@@ -10,17 +9,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 using Placica.Core.Impl.ServiceLibrary.Helpers;
 using Placica.Core.Infraestructure.Data.Context;
 using Placica.Core.Infraestructure.Data.Helpers;
 using Placica.Core.Library.Helpers;
 using Placica.Core.WebAPI.Helpers;
+using Serilog;
 
 namespace Placica.Core.WebAPI
 {
     public class Startup
-    {
+    {   
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +31,9 @@ namespace Placica.Core.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Log.Information("Arrancando la aplicacion.");
+
+            Log.Information("Configurando conexion a la base de datos.");
             services.AddDbContext<PlacicaContext>(opt =>
                 // opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
                 //opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Placica.Core.WebAPI"))
@@ -39,13 +42,14 @@ namespace Placica.Core.WebAPI
                 )
             );
 
+            Log.Information("Configurando Swagger.");
             services.AddSwaggerGen(c =>
             {
                 c.ConfigureCustomSwaggerOptions();
             });
 
+            Log.Information("Configurando Auditoria.");
             // Store audits as strings.
-
             Audit.Core.Configuration.DataProvider = new EntityFrameworkDataProvider()
             {
                 AuditEntityAction = (evt, entry, auditEntity) =>
@@ -66,16 +70,22 @@ namespace Placica.Core.WebAPI
                     )
                 );
 
-            AuditScope.Log("Startup Configure Services.", new { ExtraField = "Inicio de la aplicacion." });
-
+            Log.Information("Configurando IoC.");
             services.AddDependencyDistribution();
             services.AddDependencyApplication();
             services.AddDependencyDomain();
             services.AddDependencyInfraestructure();
 
+            Log.Information("Configurando Automapper.");
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            Log.Information("Configurando Cors.");
             services.ConfigureCors();
+
+            Log.Information("Configurando Token Autenticación.");
             services.AddTokenAuthentication(Configuration);
+
+            Log.Information("Configurando FluentValidation.");
             services.AddControllers()
             .AddFluentValidation();
         }
