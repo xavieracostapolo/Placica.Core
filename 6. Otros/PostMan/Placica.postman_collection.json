@@ -116,6 +116,102 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "PUT/api/Categoria/v1/ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \"descripcion\": \"string\",\n  \"status\": false\n}"
+				},
+				"url": {
+					"raw": "{{server}}/api/Categoria/v1/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Categoria",
+						"v1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/api/Categoria/v1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/api/Categoria/v1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Categoria",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/api/Categoria/v1/ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"descripcion\": \"string\",\n  \"status\": true\n}"
+				},
+				"url": {
+					"raw": "{{server}}/api/Categoria/v1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"Categoria",
+						"v1"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
