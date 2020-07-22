@@ -60,8 +60,10 @@ namespace Placica.Core.WebAPI
                 .WriteTo.Console()
                 .WriteTo.Elasticsearch(ConfigureElasticSink(configuration, environment))
                 .Enrich.WithProperty("Environment", environment)
+                .Enrich.WithProperty("Application", Assembly.GetExecutingAssembly().GetName().Name)
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger();
+
         }
 
         private static ElasticsearchSinkOptions ConfigureElasticSink(IConfigurationRoot configuration, string environment)

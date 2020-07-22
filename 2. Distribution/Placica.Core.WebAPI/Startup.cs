@@ -1,6 +1,4 @@
 using System;
-using Audit.Core;
-using Audit.EntityFramework.Providers;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -9,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Placica.Core.Impl.ServiceLibrary.Helpers;
 using Placica.Core.Infraestructure.Data.Context;
 using Placica.Core.Infraestructure.Data.Helpers;
@@ -20,7 +18,7 @@ using Serilog;
 namespace Placica.Core.WebAPI
 {
     public class Startup
-    {   
+    {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,12 +30,11 @@ namespace Placica.Core.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             Log.Information("Arrancando la aplicacion.");
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
             Log.Information("Configurando conexion a la base de datos.");
             services.AddDbContext<PlacicaContext>(opt =>
-                // opt.UseInMemoryDatabase("PlacicaDataBaseMemory")
-                //opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Placica.Core.WebAPI"))
-                opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection"), b =>
+                    opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection"), b =>
                     b.MigrationsAssembly("Placica.Core.WebAPI")
                 )
             );
@@ -50,25 +47,6 @@ namespace Placica.Core.WebAPI
 
             Log.Information("Configurando Auditoria.");
             // Store audits as strings.
-            Audit.Core.Configuration.DataProvider = new EntityFrameworkDataProvider()
-            {
-                AuditEntityAction = (evt, entry, auditEntity) =>
-                {
-                    var a = (dynamic)auditEntity;
-                    a.AuditDate = DateTime.UtcNow;
-                    a.UserName = evt.Environment.UserName;
-                    a.AuditAction = entry.Action; // Insert, Update, Delete
-                    return true; // return false to ignore the audit
-                }
-            };
-
-            Audit.Core.Configuration.Setup()
-                .UseRedis(redis => redis
-                    .ConnectionString("localhost:6379,allowAdmin=true")
-                    .AsString(str => str
-                        .Key(ev => $"{ev.EventType}:{Guid.NewGuid()}")
-                    )
-                );
 
             Log.Information("Configurando IoC.");
             services.AddDependencyDistribution();
@@ -117,11 +95,6 @@ namespace Placica.Core.WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
-
-            Audit.Core.Configuration.AddCustomAction(ActionType.OnScopeCreated, scope =>
-            {
-                scope.Event.Environment.UserName = "xavier.acosta";
             });
         }
     }

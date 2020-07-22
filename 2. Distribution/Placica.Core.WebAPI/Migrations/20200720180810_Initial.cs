@@ -329,22 +329,22 @@ namespace Placica.Core.WebAPI.Migrations
             migrationBuilder.InsertData(
                 table: "Parametros",
                 columns: new[] { "Id", "CreatedByUser", "CreatedDate", "Descripcion", "ModifiedByUser", "ModifiedDate", "Status", "Titulo" },
-                values: new object[] { 1L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(1710), new TimeSpan(0, 0, 0, 0, 0)), "Tipo Identificacion", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(2410), new TimeSpan(0, 0, 0, 0, 0)), true, "TIPOIDENTIFICACION" });
+                values: new object[] { 1L, "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(6730), new TimeSpan(0, 0, 0, 0, 0)), "Tipo Identificacion", "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(7420), new TimeSpan(0, 0, 0, 0, 0)), true, "TIPOIDENTIFICACION" });
 
             migrationBuilder.InsertData(
                 table: "Parametros",
                 columns: new[] { "Id", "CreatedByUser", "CreatedDate", "Descripcion", "ModifiedByUser", "ModifiedDate", "Status", "Titulo" },
-                values: new object[] { 2L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3230), new TimeSpan(0, 0, 0, 0, 0)), "Genero", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3240), new TimeSpan(0, 0, 0, 0, 0)), true, "GENERO" });
+                values: new object[] { 2L, "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(8220), new TimeSpan(0, 0, 0, 0, 0)), "Genero", "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(8240), new TimeSpan(0, 0, 0, 0, 0)), true, "GENERO" });
 
             migrationBuilder.InsertData(
                 table: "ParametroDetalles",
                 columns: new[] { "Id", "CreatedByUser", "CreatedDate", "Descripcion", "ModifiedByUser", "ModifiedDate", "ParametroId", "Status", "Value" },
                 values: new object[,]
                 {
-                    { 1L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7390), new TimeSpan(0, 0, 0, 0, 0)), "Cedula", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7400), new TimeSpan(0, 0, 0, 0, 0)), 1L, true, "Cedula" },
-                    { 2L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)), "NIT", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)), 1L, true, "NIT" },
-                    { 3L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)), "Masculino", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)), 2L, true, "M" },
-                    { 4L, "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)), "Femenino", "System", new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)), 2L, true, "F" }
+                    { 1L, "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7550), new TimeSpan(0, 0, 0, 0, 0)), "Cedula", "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)), 1L, true, "Cedula" },
+                    { 2L, "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7720), new TimeSpan(0, 0, 0, 0, 0)), "NIT", "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7720), new TimeSpan(0, 0, 0, 0, 0)), 1L, true, "NIT" },
+                    { 3L, "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7740), new TimeSpan(0, 0, 0, 0, 0)), "Masculino", "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7740), new TimeSpan(0, 0, 0, 0, 0)), 2L, true, "M" },
+                    { 4L, "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7760), new TimeSpan(0, 0, 0, 0, 0)), "Femenino", "System", new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7760), new TimeSpan(0, 0, 0, 0, 0)), 2L, true, "F" }
                 });
 
             migrationBuilder.CreateIndex(

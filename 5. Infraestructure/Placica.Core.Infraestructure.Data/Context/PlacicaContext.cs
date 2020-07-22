@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Audit.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Placica.Core.Library.Entities;
 
@@ -11,14 +10,10 @@ namespace Placica.Core.Infraestructure.Data.Context
 {
     public class PlacicaContext : DbContext
     {
-        private static DbContextHelper _helper = new DbContextHelper();
-        private readonly IAuditDbContext _auditContext;
 
         public PlacicaContext(DbContextOptions<PlacicaContext> options)
             : base(options)
         {
-            _auditContext = new DefaultAuditContext(this);
-            _helper.SetConfig(_auditContext);
         }
 
         public DbSet<Calificacion> Calificaciones { get; set; }
@@ -34,32 +29,43 @@ namespace Placica.Core.Infraestructure.Data.Context
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            ProcessSave();
-            return await _helper.SaveChangesAsync(_auditContext, () => base.SaveChangesAsync(cancellationToken));
-        }
+            // Get all the entities that inherit from AuditableEntity
+            // and have a state of Added or Modified
+            var entries = ChangeTracker
+                .Entries()
+                .Where(e => e.Entity is EntityAudit && (
+                        e.State == EntityState.Added
+                        || e.State == EntityState.Modified));
 
-        private void ProcessSave()
-        {
-            var currentTime = DateTimeOffset.UtcNow;
-            foreach (var item in ChangeTracker.Entries()
-                .Where(e => e.State == EntityState.Added && e.Entity is EntityAudit))
+            // For each entity we will set the Audit properties
+            foreach (var entityEntry in entries)
             {
-                var entidad = item.Entity as EntityAudit;
-                entidad.CreatedDate = currentTime;
-                entidad.CreatedByUser = "";
-                entidad.ModifiedDate = currentTime;
-                entidad.ModifiedByUser = "";
+                // If the entity state is Added let's set
+                // the CreatedAt and CreatedBy properties
+                if (entityEntry.State == EntityState.Added)
+                {
+                    ((EntityAudit)entityEntry.Entity).CreatedDate = DateTimeOffset.Now;
+                    ((EntityAudit)entityEntry.Entity).CreatedByUser = "MyApp";
+                }
+                else
+                {
+                    // If the state is Modified then we don't want
+                    // to modify the CreatedAt and CreatedBy properties
+                    // so we set their state as IsModified to false
+                    Entry((EntityAudit)entityEntry.Entity).Property(p => p.CreatedDate).IsModified = false;
+                    Entry((EntityAudit)entityEntry.Entity).Property(p => p.CreatedByUser).IsModified = false;
+                }
+
+                // In any case we always want to set the properties
+                // ModifiedAt and ModifiedBy
+                ((EntityAudit)entityEntry.Entity).ModifiedDate = DateTimeOffset.Now;
+                ((EntityAudit)entityEntry.Entity).ModifiedByUser = "MyApp";
             }
 
-            foreach (var item in ChangeTracker.Entries()
-                .Where(predicate: e => e.State == EntityState.Modified && e.Entity is EntityAudit))
-            {
-                var entidad = item.Entity as EntityAudit;
-                entidad.ModifiedDate = currentTime;
-                entidad.ModifiedByUser = "";
-                item.Property(nameof(entidad.CreatedDate)).IsModified = false;
-                item.Property(nameof(entidad.CreatedByUser)).IsModified = false;
-            }
+            // After we set all the needed properties
+            // we call the base implementation of SaveChangesAsync
+            // to actually save our entities in the database
+            return await base.SaveChangesAsync(cancellationToken);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

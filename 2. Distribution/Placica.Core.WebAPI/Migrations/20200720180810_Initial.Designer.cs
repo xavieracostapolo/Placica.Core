@@ -9,7 +9,7 @@ using Placica.Core.Infraestructure.Data.Context;
 namespace Placica.Core.WebAPI.Migrations
 {
     [DbContext(typeof(PlacicaContext))]
-    [Migration("20200719190202_Initial")]
+    [Migration("20200720180810_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -282,10 +282,10 @@ namespace Placica.Core.WebAPI.Migrations
                         {
                             Id = 1L,
                             CreatedByUser = "System",
-                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(1710), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(6730), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Tipo Identificacion",
                             ModifiedByUser = "System",
-                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(2410), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(7420), new TimeSpan(0, 0, 0, 0, 0)),
                             Status = true,
                             Titulo = "TIPOIDENTIFICACION"
                         },
@@ -293,10 +293,10 @@ namespace Placica.Core.WebAPI.Migrations
                         {
                             Id = 2L,
                             CreatedByUser = "System",
-                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3230), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(8220), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Genero",
                             ModifiedByUser = "System",
-                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 234, DateTimeKind.Unspecified).AddTicks(3240), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 494, DateTimeKind.Unspecified).AddTicks(8240), new TimeSpan(0, 0, 0, 0, 0)),
                             Status = true,
                             Titulo = "GENERO"
                         });
@@ -343,10 +343,10 @@ namespace Placica.Core.WebAPI.Migrations
                         {
                             Id = 1L,
                             CreatedByUser = "System",
-                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7390), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7550), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Cedula",
                             ModifiedByUser = "System",
-                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7400), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 1L,
                             Status = true,
                             Value = "Cedula"
@@ -355,10 +355,10 @@ namespace Placica.Core.WebAPI.Migrations
                         {
                             Id = 2L,
                             CreatedByUser = "System",
-                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7720), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "NIT",
                             ModifiedByUser = "System",
-                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7560), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7720), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 1L,
                             Status = true,
                             Value = "NIT"
@@ -367,10 +367,10 @@ namespace Placica.Core.WebAPI.Migrations
                         {
                             Id = 3L,
                             CreatedByUser = "System",
-                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7740), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Masculino",
                             ModifiedByUser = "System",
-                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7580), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7740), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 2L,
                             Status = true,
                             Value = "M"
@@ -379,10 +379,10 @@ namespace Placica.Core.WebAPI.Migrations
                         {
                             Id = 4L,
                             CreatedByUser = "System",
-                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7760), new TimeSpan(0, 0, 0, 0, 0)),
                             Descripcion = "Femenino",
                             ModifiedByUser = "System",
-                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 19, 19, 2, 2, 236, DateTimeKind.Unspecified).AddTicks(7600), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedDate = new DateTimeOffset(new DateTime(2020, 7, 20, 18, 8, 9, 496, DateTimeKind.Unspecified).AddTicks(7760), new TimeSpan(0, 0, 0, 0, 0)),
                             ParametroId = 2L,
                             Status = true,
                             Value = "F"

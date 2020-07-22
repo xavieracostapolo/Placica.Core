@@ -5,8 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Audit.EntityFramework.Core" Version="15.2.3" />
-    <PackageReference Include="Audit.NET" Version="15.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
