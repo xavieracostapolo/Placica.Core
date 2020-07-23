@@ -5,7 +5,7 @@ using Placica.Core.WebAPI.Services.Contracts;
 
 namespace Placica.Core.WebAPI.Controllers.V1
 {
-    [Route("api/[controller]/v1")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class EmpresaController : BaseController<Empresa>
     {

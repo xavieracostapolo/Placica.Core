@@ -16,6 +16,7 @@ namespace Placica.Core.Impl.ServiceLibrary.Helpers
             CreateMap<Dto.Pedido, Entity.Pedido>().ReverseMap();
             CreateMap<Dto.PedidoDetalle, Entity.PedidoDetalle>().ReverseMap();
             CreateMap<Dto.Producto, Entity.Producto>().ReverseMap();
+            CreateMap<Dto.Usuario, Entity.Usuario>().ReverseMap();
         }
     }
 }

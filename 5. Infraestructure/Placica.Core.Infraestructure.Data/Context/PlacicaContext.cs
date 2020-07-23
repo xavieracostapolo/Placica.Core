@@ -70,6 +70,10 @@ namespace Placica.Core.Infraestructure.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Crear unique constraint
+            modelBuilder.Entity<Usuario>()
+            .HasIndex(u => u.UserId)
+            .IsUnique();
 
             modelBuilder.Entity<Parametro>().HasData(new List<Parametro>
             {

@@ -16,6 +16,7 @@ namespace Placica.Core.Impl.ServiceLibrary.Helpers
             services.AddTransient<IApplicationService<Dto.PedidoDetalle>, PedidoDetalleApplicationService>();
             services.AddTransient<IApplicationService<Dto.Pedido>, PedidoApplicationService>();
             services.AddTransient<IApplicationService<Dto.Producto>, ProductoApplicationService>();
+            services.AddTransient<IApplicationService<Dto.Usuario>, UsuarioApplicationService>();
         }
     }
 }

@@ -9,7 +9,7 @@ using Placica.Core.WebAPI.Services.Contracts;
 namespace Placica.Core.WebAPI.Controllers.V1
 {
     [ModelValidation]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     [Authorize]
     public abstract class BaseController<TModel> : Controller
