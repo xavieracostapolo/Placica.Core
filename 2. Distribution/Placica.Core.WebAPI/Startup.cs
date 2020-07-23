@@ -58,7 +58,7 @@ namespace Placica.Core.WebAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             Log.Information("Configurando Cors.");
-            services.ConfigureCors();
+            services.ConfigureCors(Configuration);
 
             Log.Information("Configurando Token Autenticación.");
             services.AddTokenAuthentication(Configuration);
@@ -75,6 +75,8 @@ namespace Placica.Core.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("PolicyNames.AllowOrigins"); 
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();

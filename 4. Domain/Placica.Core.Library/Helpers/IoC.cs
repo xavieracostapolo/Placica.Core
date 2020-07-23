@@ -16,6 +16,7 @@ namespace Placica.Core.Library.Helpers
             services.AddTransient<IDomainService<Entity.PedidoDetalle>, PedidoDetalleDomainService>();
             services.AddTransient<IDomainService<Entity.Pedido>, PedidoDomainService>();
             services.AddTransient<IDomainService<Entity.Producto>, ProductoDomainService>();
+            services.AddTransient<IDomainService<Entity.Usuario>, UsuarioDomainService>();
         }
     }
 }

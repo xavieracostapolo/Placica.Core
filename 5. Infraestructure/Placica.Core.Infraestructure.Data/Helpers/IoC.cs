@@ -16,6 +16,7 @@ namespace Placica.Core.Infraestructure.Data.Helpers
             services.AddScoped<IRepository<Entity.PedidoDetalle>, PedidoDetalleRepository>();
             services.AddScoped<IRepository<Entity.Pedido>, PedidoRepository>();
             services.AddScoped<IRepository<Entity.Producto>, ProductoRepository>();
+            services.AddScoped<IRepository<Entity.Usuario>, UsuarioRepository>();
         }
     }
 }

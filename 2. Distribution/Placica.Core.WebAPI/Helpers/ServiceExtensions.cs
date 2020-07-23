@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -12,22 +13,30 @@ namespace Placica.Core.WebAPI.Helpers
 {
     public static class ServiceExtensions
     {
-        public static void ConfigureCors(this IServiceCollection services)
+        public static void ConfigureCors(this IServiceCollection services, IConfiguration config)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                builder => builder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-            });
+            services.AddCors(
+                options => options.AddPolicy(
+                    "PolicyNames.AllowOrigins",
+                    builder => builder
+                        .WithOrigins(
+                            config["Origins:CorsOrigins"]
+                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                .Select(s => s.TrimEnd('/'))
+                                .ToArray()
+                        )
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                )
+            );
         }
 
         public static IServiceCollection AddTokenAuthentication(this IServiceCollection services, IConfiguration config)
         {
             var secret = config.GetSection("JwtConfig").GetSection("secret").Value;
             var validIssuer = config.GetSection("JwtConfig").GetSection("validIssuer").Value;
-            var validAudience= config.GetSection("JwtConfig").GetSection("validAudience").Value;
+            var validAudience = config.GetSection("JwtConfig").GetSection("validAudience").Value;
 
             var key = Encoding.ASCII.GetBytes(secret);
             services.AddAuthentication(x =>
@@ -60,33 +69,33 @@ namespace Placica.Core.WebAPI.Helpers
         public static void ConfigureCustomSwaggerOptions(this SwaggerGenOptions opt)
         {
             opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+            {
+                Title = "Placica API.",
+                Description = "Metodos de la API de la Placica App.",
+                Version = "V1",
+                TermsOfService = new Uri("https://example.com/terms"),
+                Contact = new OpenApiContact
                 {
-                    Title = "Placica API.",
-                    Description = "Metodos de la API de la Placica App.",
-                    Version = "V1",
-                    TermsOfService = new Uri("https://example.com/terms"),
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Shayne Boyer",
-                        Email = string.Empty,
-                        Url = new Uri("https://twitter.com/spboyer"),
-                    },
-                    License = new OpenApiLicense
-                    {
-                        Name = "Use under LICX",
-                        Url = new Uri("https://example.com/license"),
-                    }
-                });
-
-                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    Name = "Shayne Boyer",
+                    Email = string.Empty,
+                    Url = new Uri("https://twitter.com/spboyer"),
+                },
+                License = new OpenApiLicense
                 {
-                    In = ParameterLocation.Header,
-                    Description = "Please insert JWT with Bearer into field",
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.ApiKey
-                });
+                    Name = "Use under LICX",
+                    Url = new Uri("https://example.com/license"),
+                }
+            });
 
-                opt.AddSecurityRequirement(new OpenApiSecurityRequirement {
+            opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                In = ParameterLocation.Header,
+                Description = "Please insert JWT with Bearer into field",
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey
+            });
+
+            opt.AddSecurityRequirement(new OpenApiSecurityRequirement {
                 {
                     new OpenApiSecurityScheme
                     {

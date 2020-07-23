@@ -4,7 +4,7 @@ using Placica.Core.WebAPI.Services.Implementacion;
 
 namespace Placica.Core.WebAPI.Controllers.V1
 {
-    [Route("api/[controller]/v1")]
+    [Route("api/v1/[controller]")]
     [ApiController]  
     public class TokenController : ControllerBase  
     {  

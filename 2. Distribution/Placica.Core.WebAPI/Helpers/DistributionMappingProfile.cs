@@ -16,6 +16,7 @@ namespace Placica.Core.WebAPI.Helpers
             CreateMap<Dto.Pedido, Model.Pedido>().ReverseMap();
             CreateMap<Dto.PedidoDetalle, Model.PedidoDetalle>().ReverseMap();
             CreateMap<Dto.Producto, Model.Producto>().ReverseMap();
+            CreateMap<Dto.Usuario, Model.LoginModel>().ReverseMap();
         }
     }
 }

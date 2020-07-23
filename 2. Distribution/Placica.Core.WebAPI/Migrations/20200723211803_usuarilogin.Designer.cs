@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Placica.Core.Infraestructure.Data.Context;
 
 namespace Placica.Core.WebAPI.Migrations
 {
     [DbContext(typeof(PlacicaContext))]
-    partial class PlacicaContextModelSnapshot : ModelSnapshot
+    [Migration("20200723211803_usuarilogin")]
+    partial class usuarilogin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
