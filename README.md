@@ -33,9 +33,40 @@ TODO: Guide users through getting your code up and running on their own system. 
 * dotnet build
 * dotnet run -p 2.\ Distribution/Placica.Core.WebAPI/
 
+* dotnet add 2.\ Distribution/Placica.Core.WebAPI/ package Microsoft.EntityFrameworkCore.Design
 
 # Serilog
-https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
+* https://www.campusmvp.es/recursos/post/como-manejar-trazas-en-net-core-con-serilog.aspx
 
-#JWT
-https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+# JWT
+* https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+
+# Validation
+* https://docs.fluentvalidation.net/en/latest/start.html
+
+# SqlLite 
+* https://elanderson.net/2019/11/asp-net-core-3-add-entity-framework-core-to-existing-project/
+* dotnet ef migrations add Initial -o Data/SqlliteMigrations --project 2.\ Distribution/Placica.Core.WebAPI/
+* dotnet ef database update --project 2.\ Distribution/Placica.Core.WebAPI/
+* Done. To undo this action, use 'ef migrations remove'
+
+1) dotnet ef database drop --project 2.\ Distribution/Placica.Core.WebAPI/
+2) dotnet ef migrations remove --project 2.\ Distribution/Placica.Core.WebAPI/
+3) dotnet ef migrations add Initial --project 2.\ Distribution/Placica.Core.WebAPI/
+4) dotnet ef database update --project 2.\ Distribution/Placica.Core.WebAPI/
+
+5) dotnet ef migrations add MigrateParametrosInitial  --project 2.\ Distribution/Placica.Core.WebAPI/
+
+# Docker
+* Docker % docker pull mysql:latest
+* docker run -p 3307:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql 
+
+* docker pull redis:latest
+* docker run -p 6379:6379 --name ps-redis -d redis
+
+https://codehandbook.org/how-to-connect-to-mysql-running-in-docker-container-from-localhost/
+
+https://github.com/thepirat000/Audit.NET
+https://github.com/thepirat000/Audit.NET/blob/master/src/Audit.NET.Redis/README.md
+
+https://gavilan.blog/2019/08/04/audit-by-columns-with-entity-framework-core/

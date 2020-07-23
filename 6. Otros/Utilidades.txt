@@ -1,0 +1,85 @@
+DOCKER ELASTIC
+https://www.humankode.com/asp-net-core/logging-with-elasticsearch-kibana-asp-net-core-and-docker
+
+
+-> docker-compose up -d
+
+Auditoria de columnas
+https://dev.to/rickystam/ef-core-how-to-implement-basic-auditing-on-your-entities-1mbm
+
+
+Audit.Core.Configuration.Setup()
+.UseElasticsearch(config => config
+    .ConnectionSettings(new Uri(Configuration["ElasticConfiguration:Uri"]))
+    .Index(auditEvent => auditEvent.EventType.ToLower())
+    .Id(ev => Guid.NewGuid())
+);
+
+Soportar los nuevos campos de auditoria en kibana
+http://localhost:5601/app/kibana#/dev_tools/console
+
+PUT /defaultauditcontext/_mapping
+{
+  "properties": {
+    "entityFrameworkEvent": {
+      "properties": {
+        "changes": {
+          "properties": {
+            "originalValue": { "type": "text" },
+            "columnName": { "type": "text" },
+            "newValue": { "type": "text" }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET /defaultauditcontext/_mapping
+
+
+PUT /defaultauditcontext/_mapping
+{
+  "properties": {
+    "entityFrameworkEvent": {
+      "properties": {
+        "entries": {
+          "properties": {
+            "changes": {
+              "properties": {
+                "originalValue": {
+                  "type": "text"
+                },
+                "columnName": {
+                  "type": "text"
+                },
+                "newValue": {
+                  "type": "text"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET /defaultauditcontext/_mapping
+
+PUT /defaultauditcontext/_mapping
+{
+  "properties": {
+    "entityFrameworkEvent": {
+      "properties": {
+        "changes": {
+          "properties": {
+            "originalValue": { "type": "text" },
+            "columnName": { "type": "text" },
+            "newValue": { "type": "text" }
+          }
+        }
+      }
+    }
+  }
+}
