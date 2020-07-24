@@ -11,9 +11,9 @@ namespace Placica.Core.WebAPI.Controllers.V1
     [ApiController]
     public class AccountController : Controller
     {
-        private readonly IService<LoginModel> _service;
+        private readonly IUsuarioService _service;
 
-        public AccountController(IService<LoginModel> service)
+        public AccountController(IUsuarioService service)
         {
             _service = service;
         }
@@ -21,7 +21,7 @@ namespace Placica.Core.WebAPI.Controllers.V1
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] LoginModel model)
         {
-            var data = await _service.Add(model);
+            var data = await _service.AddLoginUsuario(model);
             return Ok(data);
         }
     }
